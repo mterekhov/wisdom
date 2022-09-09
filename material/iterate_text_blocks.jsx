@@ -14,6 +14,7 @@ function main(){
 		alert("No documents are open. Please open a document and try again.");
 	}
 }
+
 function myDisplayDialog(){
 	myFolder = Folder.selectDialog ("Choose a Folder");
 	if((myFolder != null)&&(app.activeDocument.stories.length !=0)){
@@ -29,14 +30,14 @@ function exportAllStoriesByTextFrames(myFolder) {
 	var englishLayer = app.activeDocument.layers.itemByName("English")
 
 	for(k = 0; k < sanskritLayer.pageItems.length; k++){
-		str += "{\"sanskrit\":\"" + sanskritLayer.pageItems[k].contents + "\",";
-		if (k < iastLayer.pageItems.length) {
-			str += "\"iast\":\"" + iastLayer.pageItems[k].contents + "\",";
+		if ((k >= iastLayer.pageItems.length) || (k >= englishLayer.pageItems.length)) {
+			break;
 		}
-		if (k < englishLayer.pageItems.length) {
-			str += "\"english\":\"" + englishLayer.pageItems[k].contents + "\"},";
-		}
+		str += "{\"sanskrit\":\"" + encodeURI(sanskritLayer.pageItems[k].contents) + "\",";
+		str += "\"iast\":\"" + encodeURI(iastLayer.pageItems[k].contents) + "\",";
+		str += "\"english\":\"" + encodeURI(englishLayer.pageItems[k].contents) + "\"},";
 	}
+	str = str.substring(0, str.length - 1);
 	str += "]"
 
 	var outfile = File(myFolder + "/" + "export.json")
