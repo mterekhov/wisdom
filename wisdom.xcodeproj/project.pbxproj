@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE5C765D28CB4F2400E79DB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C765C28CB4F2400E79DB5 /* AppDelegate.swift */; };
+		DE5C765F28CB4F2400E79DB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C765E28CB4F2400E79DB5 /* SceneDelegate.swift */; };
+		DE5C766128CB4F2400E79DB5 /* WMainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C766028CB4F2400E79DB5 /* WMainMenuVC.swift */; };
+		DE5C766628CB4F2500E79DB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5C766528CB4F2500E79DB5 /* Assets.xcassets */; };
+		DE5C766928CB4F2500E79DB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5C766728CB4F2500E79DB5 /* LaunchScreen.storyboard */; };
+		DE5C767128CB4FDE00E79DB5 /* WCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C767028CB4FDE00E79DB5 /* WCoreDataService.swift */; };
+		DE5C767628CB513900E79DB5 /* UIColor+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C767228CB513900E79DB5 /* UIColor+Wisdom.swift */; };
+		DE5C767728CB513900E79DB5 /* NSManagedObjectContext+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C767328CB513900E79DB5 /* NSManagedObjectContext+Wisdom.swift */; };
+		DE5C767828CB513900E79DB5 /* UIFont+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C767428CB513900E79DB5 /* UIFont+Wisdom.swift */; };
+		DE5C767928CB513900E79DB5 /* EuclidFlex-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE5C767528CB513900E79DB5 /* EuclidFlex-Regular.otf */; };
+		DE5C767C28CB51B500E79DB5 /* wisdom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE5C767A28CB51B500E79DB5 /* wisdom.xcdatamodeld */; };
+		DE5C767E28CB523E00E79DB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE5C767D28CB523E00E79DB5 /* Localizable.strings */; };
+		DE5C768328CB539000E79DB5 /* String+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768228CB539000E79DB5 /* String+Wisdom.swift */; };
+		DE5C768528CB53CE00E79DB5 /* UIButton+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768428CB53CE00E79DB5 /* UIButton+Wisdom.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DE5C765928CB4F2400E79DB5 /* wisdom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wisdom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE5C765C28CB4F2400E79DB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE5C765E28CB4F2400E79DB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DE5C766028CB4F2400E79DB5 /* WMainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMainMenuVC.swift; sourceTree = "<group>"; };
+		DE5C766528CB4F2500E79DB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE5C766828CB4F2500E79DB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE5C766A28CB4F2500E79DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE5C767028CB4FDE00E79DB5 /* WCoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCoreDataService.swift; sourceTree = "<group>"; };
+		DE5C767228CB513900E79DB5 /* UIColor+Wisdom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Wisdom.swift"; sourceTree = "<group>"; };
+		DE5C767328CB513900E79DB5 /* NSManagedObjectContext+Wisdom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Wisdom.swift"; sourceTree = "<group>"; };
+		DE5C767428CB513900E79DB5 /* UIFont+Wisdom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Wisdom.swift"; sourceTree = "<group>"; };
+		DE5C767528CB513900E79DB5 /* EuclidFlex-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EuclidFlex-Regular.otf"; sourceTree = "<group>"; };
+		DE5C767B28CB51B500E79DB5 /* wisdom.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wisdom.xcdatamodel; sourceTree = "<group>"; };
+		DE5C767D28CB523E00E79DB5 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		DE5C768228CB539000E79DB5 /* String+Wisdom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Wisdom.swift"; sourceTree = "<group>"; };
+		DE5C768428CB53CE00E79DB5 /* UIButton+Wisdom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Wisdom.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE5C765628CB4F2400E79DB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE5C765028CB4F2400E79DB5 = {
+			isa = PBXGroup;
+			children = (
+				DE5C765B28CB4F2400E79DB5 /* wisdom */,
+				DE5C765A28CB4F2400E79DB5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE5C765A28CB4F2400E79DB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE5C765928CB4F2400E79DB5 /* wisdom.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE5C765B28CB4F2400E79DB5 /* wisdom */ = {
+			isa = PBXGroup;
+			children = (
+				DE5C767528CB513900E79DB5 /* EuclidFlex-Regular.otf */,
+				DE5C767F28CB532D00E79DB5 /* Categories */,
+				DE5C768028CB533400E79DB5 /* Services */,
+				DE5C768128CB534000E79DB5 /* Screens */,
+				DE5C765C28CB4F2400E79DB5 /* AppDelegate.swift */,
+				DE5C765E28CB4F2400E79DB5 /* SceneDelegate.swift */,
+				DE5C767D28CB523E00E79DB5 /* Localizable.strings */,
+				DE5C766528CB4F2500E79DB5 /* Assets.xcassets */,
+				DE5C766728CB4F2500E79DB5 /* LaunchScreen.storyboard */,
+				DE5C766A28CB4F2500E79DB5 /* Info.plist */,
+				DE5C767A28CB51B500E79DB5 /* wisdom.xcdatamodeld */,
+			);
+			path = wisdom;
+			sourceTree = "<group>";
+		};
+		DE5C767F28CB532D00E79DB5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DE5C768428CB53CE00E79DB5 /* UIButton+Wisdom.swift */,
+				DE5C768228CB539000E79DB5 /* String+Wisdom.swift */,
+				DE5C767328CB513900E79DB5 /* NSManagedObjectContext+Wisdom.swift */,
+				DE5C767228CB513900E79DB5 /* UIColor+Wisdom.swift */,
+				DE5C767428CB513900E79DB5 /* UIFont+Wisdom.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		DE5C768028CB533400E79DB5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DE5C767028CB4FDE00E79DB5 /* WCoreDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DE5C768128CB534000E79DB5 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				DE5C766028CB4F2400E79DB5 /* WMainMenuVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE5C765828CB4F2400E79DB5 /* wisdom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE5C766D28CB4F2500E79DB5 /* Build configuration list for PBXNativeTarget "wisdom" */;
+			buildPhases = (
+				DE5C765528CB4F2400E79DB5 /* Sources */,
+				DE5C765628CB4F2400E79DB5 /* Frameworks */,
+				DE5C765728CB4F2400E79DB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wisdom;
+			productName = wisdom;
+			productReference = DE5C765928CB4F2400E79DB5 /* wisdom.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE5C765128CB4F2400E79DB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					DE5C765828CB4F2400E79DB5 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = DE5C765428CB4F2400E79DB5 /* Build configuration list for PBXProject "wisdom" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE5C765028CB4F2400E79DB5;
+			productRefGroup = DE5C765A28CB4F2400E79DB5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE5C765828CB4F2400E79DB5 /* wisdom */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE5C765728CB4F2400E79DB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE5C767928CB513900E79DB5 /* EuclidFlex-Regular.otf in Resources */,
+				DE5C767E28CB523E00E79DB5 /* Localizable.strings in Resources */,
+				DE5C766928CB4F2500E79DB5 /* LaunchScreen.storyboard in Resources */,
+				DE5C766628CB4F2500E79DB5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE5C765528CB4F2400E79DB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE5C768528CB53CE00E79DB5 /* UIButton+Wisdom.swift in Sources */,
+				DE5C767628CB513900E79DB5 /* UIColor+Wisdom.swift in Sources */,
+				DE5C767728CB513900E79DB5 /* NSManagedObjectContext+Wisdom.swift in Sources */,
+				DE5C767128CB4FDE00E79DB5 /* WCoreDataService.swift in Sources */,
+				DE5C768328CB539000E79DB5 /* String+Wisdom.swift in Sources */,
+				DE5C766128CB4F2400E79DB5 /* WMainMenuVC.swift in Sources */,
+				DE5C765D28CB4F2400E79DB5 /* AppDelegate.swift in Sources */,
+				DE5C767828CB513900E79DB5 /* UIFont+Wisdom.swift in Sources */,
+				DE5C767C28CB51B500E79DB5 /* wisdom.xcdatamodeld in Sources */,
+				DE5C765F28CB4F2400E79DB5 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DE5C766728CB4F2500E79DB5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE5C766828CB4F2500E79DB5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE5C766B28CB4F2500E79DB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE5C766C28CB4F2500E79DB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE5C766E28CB4F2500E79DB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UAVM255T7W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = wisdom/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartcosmetics.wisdom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DE5C766F28CB4F2500E79DB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UAVM255T7W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = wisdom/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartcosmetics.wisdom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE5C765428CB4F2400E79DB5 /* Build configuration list for PBXProject "wisdom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE5C766B28CB4F2500E79DB5 /* Debug */,
+				DE5C766C28CB4F2500E79DB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE5C766D28CB4F2500E79DB5 /* Build configuration list for PBXNativeTarget "wisdom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE5C766E28CB4F2500E79DB5 /* Debug */,
+				DE5C766F28CB4F2500E79DB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE5C767A28CB51B500E79DB5 /* wisdom.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE5C767B28CB51B500E79DB5 /* wisdom.xcdatamodel */,
+			);
+			currentVersion = DE5C767B28CB51B500E79DB5 /* wisdom.xcdatamodel */;
+			path = wisdom.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DE5C765128CB4F2400E79DB5 /* Project object */;
+}

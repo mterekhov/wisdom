@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  wisdom
+
+  Created by cipher on 09.09.2022.
+  
+*/
+
+"MainMenuTitle" = "wisdom";
+"MainMenuTextsListItem" = "texts list";
+"MainMenuSettingsItem" = "settings";
