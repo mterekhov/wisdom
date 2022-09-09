@@ -21,6 +21,10 @@
 		DE5C767E28CB523E00E79DB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE5C767D28CB523E00E79DB5 /* Localizable.strings */; };
 		DE5C768328CB539000E79DB5 /* String+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768228CB539000E79DB5 /* String+Wisdom.swift */; };
 		DE5C768528CB53CE00E79DB5 /* UIButton+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768428CB53CE00E79DB5 /* UIButton+Wisdom.swift */; };
+		DE5C768728CB58FF00E79DB5 /* WTextsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768628CB58FF00E79DB5 /* WTextsListVC.swift */; };
+		DE5C768928CB593500E79DB5 /* WTextsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768828CB593500E79DB5 /* WTextsService.swift */; };
+		DE5C768B28CB595700E79DB5 /* WText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768A28CB595700E79DB5 /* WText.swift */; };
+		DE5C768D28CB59B600E79DB5 /* WVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768C28CB59B600E79DB5 /* WVerse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		DE5C767D28CB523E00E79DB5 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		DE5C768228CB539000E79DB5 /* String+Wisdom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Wisdom.swift"; sourceTree = "<group>"; };
 		DE5C768428CB53CE00E79DB5 /* UIButton+Wisdom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Wisdom.swift"; sourceTree = "<group>"; };
+		DE5C768628CB58FF00E79DB5 /* WTextsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTextsListVC.swift; sourceTree = "<group>"; };
+		DE5C768828CB593500E79DB5 /* WTextsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTextsService.swift; sourceTree = "<group>"; };
+		DE5C768A28CB595700E79DB5 /* WText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WText.swift; sourceTree = "<group>"; };
+		DE5C768C28CB59B600E79DB5 /* WVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WVerse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				DE5C767028CB4FDE00E79DB5 /* WCoreDataService.swift */,
+				DE5C768828CB593500E79DB5 /* WTextsService.swift */,
+				DE5C768A28CB595700E79DB5 /* WText.swift */,
+				DE5C768C28CB59B600E79DB5 /* WVerse.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -111,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5C766028CB4F2400E79DB5 /* WMainMenuVC.swift */,
+				DE5C768628CB58FF00E79DB5 /* WTextsListVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -187,7 +199,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5C768B28CB595700E79DB5 /* WText.swift in Sources */,
+				DE5C768728CB58FF00E79DB5 /* WTextsListVC.swift in Sources */,
 				DE5C768528CB53CE00E79DB5 /* UIButton+Wisdom.swift in Sources */,
+				DE5C768D28CB59B600E79DB5 /* WVerse.swift in Sources */,
+				DE5C768928CB593500E79DB5 /* WTextsService.swift in Sources */,
 				DE5C767628CB513900E79DB5 /* UIColor+Wisdom.swift in Sources */,
 				DE5C767728CB513900E79DB5 /* NSManagedObjectContext+Wisdom.swift in Sources */,
 				DE5C767128CB4FDE00E79DB5 /* WCoreDataService.swift in Sources */,

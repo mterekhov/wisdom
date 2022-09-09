@@ -12,8 +12,6 @@ class WMainMenuVC: UIViewController {
     private let TitleFontSize: CGFloat = 30
     private let SpaceBetween: CGFloat = 30
     
-    public var coreDataService: WCoreDataServiceProtocol?
-
     override func loadView() {
         super.loadView()
         
@@ -24,6 +22,9 @@ class WMainMenuVC: UIViewController {
 
     @objc
     private func textsListButtonTapped(sender: UIButton) {
+        let viewController = WTextsListVC()
+        viewController.textsService = WTextsService((UIApplication.shared.delegate as? AppDelegate)?.coreDataService)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc

@@ -18,7 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         let viewController = WMainMenuVC()
-        viewController.coreDataService = (UIApplication.shared.delegate as? AppDelegate)?.coreDataService
         let navvc = UINavigationController(rootViewController: viewController)
         
         window = UIWindow(frame: windowsScene.coordinateSpace.bounds)
