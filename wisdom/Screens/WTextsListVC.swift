@@ -36,15 +36,11 @@ class WTextsListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let newCell = YDCatalogCell(style: .default, reuseIdentifier: nil)
+        let newCell = WTextsCell(style: .default, reuseIdentifier: nil)
         
-        newCell.configureCell(assignAsana: textsList[indexPath.row])
+        newCell.configureCell(textsList[indexPath.row])
         
         return newCell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return YDCatalogCell.cellHeight()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -87,7 +83,7 @@ class WTextsListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         let titleLabel = UILabel(frame: .zero)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = .wisdom_flexRegular(TitleFontSize)
-        titleLabel.text = "CatalogTitle".local.uppercased()
+        titleLabel.text = "TextsListTitle".local.uppercased()
         titleLabel.textAlignment = .center
         view.addSubview(titleLabel)
         

@@ -26,7 +26,7 @@ public protocol WCoreDataServiceProtocol {
 public class WCoreDataService: WCoreDataServiceProtocol {
 
     private lazy var persistentContainer: NSPersistentContainer? = {
-        let container = NSPersistentContainer(name: "DreamsJournal")
+        let container = NSPersistentContainer(name: "wisdom")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

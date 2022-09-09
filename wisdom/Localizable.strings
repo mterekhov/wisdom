@@ -9,3 +9,5 @@
 "MainMenuTitle" = "wisdom";
 "MainMenuTextsListItem" = "texts list";
 "MainMenuSettingsItem" = "settings";
+
+"TextsListTitle" = "Texts";

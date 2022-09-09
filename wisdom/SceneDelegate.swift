@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let viewController = WMainMenuVC()
         let navvc = UINavigationController(rootViewController: viewController)
+        navvc.isNavigationBarHidden = true
         
         window = UIWindow(frame: windowsScene.coordinateSpace.bounds)
         window?.backgroundColor = .white

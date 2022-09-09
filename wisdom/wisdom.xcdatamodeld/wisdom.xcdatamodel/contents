@@ -4,7 +4,7 @@
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="year" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="versesList" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CDVerse" inverseName="text" inverseEntity="CDVerse"/>
+        <relationship name="versesList" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="CDVerse" inverseName="text" inverseEntity="CDVerse"/>
     </entity>
     <entity name="CDVerse" representedClassName="CDVerse" syncable="YES" codeGenerationType="class">
         <attribute name="english" optional="YES" attributeType="String"/>
