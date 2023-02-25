@@ -1,13 +1,6 @@
-//
-//  WText.swift
-//  wisdom
-//
-//  Created by cipher on 09.09.2022.
-//
-
 import Foundation
 
-struct WText {
+struct WBook {
     
     public var versesList: [WVerse]?
     public var author: String

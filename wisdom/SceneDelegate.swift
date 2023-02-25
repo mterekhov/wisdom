@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        let viewController = WMainMenuVC()
+        let viewController = WLibraryVC()
         let navvc = UINavigationController(rootViewController: viewController)
         navvc.isNavigationBarHidden = true
         

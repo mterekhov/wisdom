@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE4BBA4C28CBCB5D008C81BD /* WInjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4BBA4B28CBCB5D008C81BD /* WInjectService.swift */; };
+		DE491F4B29AAAD2500F7AFCC /* WBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE491F4A29AAAD2500F7AFCC /* WBookCell.swift */; };
 		DE5C765D28CB4F2400E79DB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C765C28CB4F2400E79DB5 /* AppDelegate.swift */; };
 		DE5C765F28CB4F2400E79DB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C765E28CB4F2400E79DB5 /* SceneDelegate.swift */; };
-		DE5C766128CB4F2400E79DB5 /* WMainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C766028CB4F2400E79DB5 /* WMainMenuVC.swift */; };
+		DE5C766128CB4F2400E79DB5 /* WLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C766028CB4F2400E79DB5 /* WLibraryVC.swift */; };
 		DE5C766628CB4F2500E79DB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5C766528CB4F2500E79DB5 /* Assets.xcassets */; };
 		DE5C766928CB4F2500E79DB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5C766728CB4F2500E79DB5 /* LaunchScreen.storyboard */; };
 		DE5C767128CB4FDE00E79DB5 /* WCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C767028CB4FDE00E79DB5 /* WCoreDataService.swift */; };
@@ -22,19 +22,18 @@
 		DE5C767E28CB523E00E79DB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE5C767D28CB523E00E79DB5 /* Localizable.strings */; };
 		DE5C768328CB539000E79DB5 /* String+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768228CB539000E79DB5 /* String+Wisdom.swift */; };
 		DE5C768528CB53CE00E79DB5 /* UIButton+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768428CB53CE00E79DB5 /* UIButton+Wisdom.swift */; };
-		DE5C768728CB58FF00E79DB5 /* WTextsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768628CB58FF00E79DB5 /* WTextsListVC.swift */; };
-		DE5C768928CB593500E79DB5 /* WTextsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768828CB593500E79DB5 /* WTextsService.swift */; };
-		DE5C768B28CB595700E79DB5 /* WText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768A28CB595700E79DB5 /* WText.swift */; };
+		DE5C768928CB593500E79DB5 /* WBooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768828CB593500E79DB5 /* WBooksService.swift */; };
+		DE5C768B28CB595700E79DB5 /* WBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768A28CB595700E79DB5 /* WBook.swift */; };
 		DE5C768D28CB59B600E79DB5 /* WVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768C28CB59B600E79DB5 /* WVerse.swift */; };
-		DE5C768F28CB65ED00E79DB5 /* WTextsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768E28CB65ED00E79DB5 /* WTextsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE491F4A29AAAD2500F7AFCC /* WBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBookCell.swift; sourceTree = "<group>"; };
 		DE4BBA4B28CBCB5D008C81BD /* WInjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WInjectService.swift; sourceTree = "<group>"; };
 		DE5C765928CB4F2400E79DB5 /* wisdom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wisdom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5C765C28CB4F2400E79DB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE5C765E28CB4F2400E79DB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE5C766028CB4F2400E79DB5 /* WMainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMainMenuVC.swift; sourceTree = "<group>"; };
+		DE5C766028CB4F2400E79DB5 /* WLibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLibraryVC.swift; sourceTree = "<group>"; };
 		DE5C766528CB4F2500E79DB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE5C766828CB4F2500E79DB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE5C766A28CB4F2500E79DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,11 +46,9 @@
 		DE5C767D28CB523E00E79DB5 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		DE5C768228CB539000E79DB5 /* String+Wisdom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Wisdom.swift"; sourceTree = "<group>"; };
 		DE5C768428CB53CE00E79DB5 /* UIButton+Wisdom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Wisdom.swift"; sourceTree = "<group>"; };
-		DE5C768628CB58FF00E79DB5 /* WTextsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTextsListVC.swift; sourceTree = "<group>"; };
-		DE5C768828CB593500E79DB5 /* WTextsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTextsService.swift; sourceTree = "<group>"; };
-		DE5C768A28CB595700E79DB5 /* WText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WText.swift; sourceTree = "<group>"; };
+		DE5C768828CB593500E79DB5 /* WBooksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBooksService.swift; sourceTree = "<group>"; };
+		DE5C768A28CB595700E79DB5 /* WBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBook.swift; sourceTree = "<group>"; };
 		DE5C768C28CB59B600E79DB5 /* WVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WVerse.swift; sourceTree = "<group>"; };
-		DE5C768E28CB65ED00E79DB5 /* WTextsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTextsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +65,7 @@
 		DE4BBA4D28CBCC5C008C81BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DE5C768A28CB595700E79DB5 /* WText.swift */,
+				DE5C768A28CB595700E79DB5 /* WBook.swift */,
 				DE5C768C28CB59B600E79DB5 /* WVerse.swift */,
 			);
 			path = Model;
@@ -94,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				DE4BBA4D28CBCC5C008C81BD /* Model */,
-				DE5C767F28CB532D00E79DB5 /* Categories */,
+				DE5C767F28CB532D00E79DB5 /* Extensions */,
 				DE5C768028CB533400E79DB5 /* Services */,
 				DE5C768128CB534000E79DB5 /* Screens */,
 				DE5C765C28CB4F2400E79DB5 /* AppDelegate.swift */,
@@ -109,23 +106,23 @@
 			path = wisdom;
 			sourceTree = "<group>";
 		};
-		DE5C767F28CB532D00E79DB5 /* Categories */ = {
+		DE5C767F28CB532D00E79DB5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DE5C768428CB53CE00E79DB5 /* UIButton+Wisdom.swift */,
 				DE5C768228CB539000E79DB5 /* String+Wisdom.swift */,
-				DE5C767328CB513900E79DB5 /* NSManagedObjectContext+Wisdom.swift */,
 				DE5C767228CB513900E79DB5 /* UIColor+Wisdom.swift */,
 				DE5C767428CB513900E79DB5 /* UIFont+Wisdom.swift */,
+				DE5C768428CB53CE00E79DB5 /* UIButton+Wisdom.swift */,
+				DE5C767328CB513900E79DB5 /* NSManagedObjectContext+Wisdom.swift */,
 			);
-			path = Categories;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DE5C768028CB533400E79DB5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				DE5C767028CB4FDE00E79DB5 /* WCoreDataService.swift */,
-				DE5C768828CB593500E79DB5 /* WTextsService.swift */,
+				DE5C768828CB593500E79DB5 /* WBooksService.swift */,
 				DE4BBA4B28CBCB5D008C81BD /* WInjectService.swift */,
 			);
 			path = Services;
@@ -134,9 +131,8 @@
 		DE5C768128CB534000E79DB5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				DE5C766028CB4F2400E79DB5 /* WMainMenuVC.swift */,
-				DE5C768628CB58FF00E79DB5 /* WTextsListVC.swift */,
-				DE5C768E28CB65ED00E79DB5 /* WTextsCell.swift */,
+				DE5C766028CB4F2400E79DB5 /* WLibraryVC.swift */,
+				DE491F4A29AAAD2500F7AFCC /* WBookCell.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -213,19 +209,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE5C768B28CB595700E79DB5 /* WText.swift in Sources */,
-				DE5C768728CB58FF00E79DB5 /* WTextsListVC.swift in Sources */,
+				DE5C768B28CB595700E79DB5 /* WBook.swift in Sources */,
 				DE5C768528CB53CE00E79DB5 /* UIButton+Wisdom.swift in Sources */,
 				DE5C768D28CB59B600E79DB5 /* WVerse.swift in Sources */,
-				DE4BBA4C28CBCB5D008C81BD /* WInjectService.swift in Sources */,
-				DE5C768928CB593500E79DB5 /* WTextsService.swift in Sources */,
+				DE5C768928CB593500E79DB5 /* WBooksService.swift in Sources */,
 				DE5C767628CB513900E79DB5 /* UIColor+Wisdom.swift in Sources */,
 				DE5C767728CB513900E79DB5 /* NSManagedObjectContext+Wisdom.swift in Sources */,
 				DE5C767128CB4FDE00E79DB5 /* WCoreDataService.swift in Sources */,
 				DE5C768328CB539000E79DB5 /* String+Wisdom.swift in Sources */,
-				DE5C766128CB4F2400E79DB5 /* WMainMenuVC.swift in Sources */,
-				DE5C768F28CB65ED00E79DB5 /* WTextsCell.swift in Sources */,
+				DE5C766128CB4F2400E79DB5 /* WLibraryVC.swift in Sources */,
 				DE5C765D28CB4F2400E79DB5 /* AppDelegate.swift in Sources */,
+				DE491F4B29AAAD2500F7AFCC /* WBookCell.swift in Sources */,
 				DE5C767828CB513900E79DB5 /* UIFont+Wisdom.swift in Sources */,
 				DE5C767C28CB51B500E79DB5 /* wisdom.xcdatamodeld in Sources */,
 				DE5C765F28CB4F2400E79DB5 /* SceneDelegate.swift in Sources */,
@@ -296,7 +290,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -350,7 +344,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -375,7 +369,6 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,9 +376,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartcosmetics.wisdom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -404,7 +398,6 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,9 +405,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartcosmetics.wisdom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
