@@ -14,14 +14,23 @@ class WLibraryVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
     private let sectionInsets = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 20.0, right: 16.0)
     
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    private var booksService: WBooksServiceProtocol = WBooksService(nil)
+    private var booksService: WBooksServiceProtocol
     private var booksList = [WBook]()
+    
+    init(booksService: WBooksServiceProtocol, booksList: [WBook] = [WBook]()) {
+        self.booksService = booksService
+        self.booksList = booksList
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         super.loadView()
         
         createLayout()
-        booksService = WBooksService((UIApplication.shared.delegate as? AppDelegate)?.coreDataService)
         updateBooksList()
     }
     

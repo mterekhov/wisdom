@@ -8,7 +8,7 @@
 import CoreData
 
 /// Main service for simple atomic operations with CoreData stack. This service should be in single instance only for all application
-public protocol WCoreDataServiceProtocol {
+protocol WCoreDataServiceProtocol {
     
     /// creates and provides local context object for operation in asynchronous mode
     /// - Parameter completionHandler: block will be launched after the local context is created, local context will be put to this block as parameter
@@ -23,7 +23,7 @@ public protocol WCoreDataServiceProtocol {
 
 }
 
-public class WCoreDataService: WCoreDataServiceProtocol {
+class WCoreDataService: WCoreDataServiceProtocol {
 
     private lazy var persistentContainer: NSPersistentContainer? = {
         let container = NSPersistentContainer(name: "wisdom")
@@ -38,14 +38,14 @@ public class WCoreDataService: WCoreDataServiceProtocol {
 
     //  MARK: - WCoreDataServiceProtocol -
     
-    public func asyncExecute(_ completionHandler: @escaping ((NSManagedObjectContext) -> Void)) {
+    func asyncExecute(_ completionHandler: @escaping ((NSManagedObjectContext) -> Void)) {
         guard let persistentContainer = persistentContainer else {
             return
         }
         persistentContainer.performBackgroundTask(completionHandler)
     }
     
-    public func execute(_ completionHandler: ((NSManagedObjectContext) -> Void)) {
+    func execute(_ completionHandler: ((NSManagedObjectContext) -> Void)) {
         guard let persistentContainer = persistentContainer else {
             return
         }
@@ -55,7 +55,7 @@ public class WCoreDataService: WCoreDataServiceProtocol {
         }
     }
     
-    public func saveRootContext() {
+    func saveRootContext() {
         guard let persistentContainer = self.persistentContainer else {
             return
         }

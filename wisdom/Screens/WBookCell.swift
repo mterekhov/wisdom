@@ -2,13 +2,13 @@ import UIKit
 
 class WBookCell: UICollectionViewCell {
     
-    public static let reuseID = String(describing: WBookCell.self)
+    static let reuseID = String(describing: WBookCell.self)
 
     private let AuthorFontSize: CGFloat = 10
     private let TitleFontSize: CGFloat = 14
     private let SideOffset: CGFloat = 2
 
-    private var book = WBook(author: "", title: "", year: 0)
+    private var book = WBook(sanskrit: "", english: "", iast: "")
     private let titleLabel = UILabel(frame: .zero)
     private let authorLabel = UILabel(frame: .zero)
 
@@ -28,9 +28,9 @@ class WBookCell: UICollectionViewCell {
         updateContentStyle()
     }
     
-    public func configureCell(_ assignBook: WBook) {
-        authorLabel.text = assignBook.author
-        titleLabel.text = assignBook.title
+    func configureCell(_ assignBook: WBook) {
+//        authorLabel.text = assignBook.author
+//        titleLabel.text = assignBook.title
     }
     
     // MARK: - Routine -

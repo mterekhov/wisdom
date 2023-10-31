@@ -25,11 +25,12 @@
 		DE5C768928CB593500E79DB5 /* WBooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768828CB593500E79DB5 /* WBooksService.swift */; };
 		DE5C768B28CB595700E79DB5 /* WBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768A28CB595700E79DB5 /* WBook.swift */; };
 		DE5C768D28CB59B600E79DB5 /* WVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768C28CB59B600E79DB5 /* WVerse.swift */; };
+		DE8F1DDD2AF1A6B7008E5073 /* WNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F1DDC2AF1A6B7008E5073 /* WNetworkService.swift */; };
+		DE8F1DDF2AF1A6DA008E5073 /* WJnanaAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F1DDE2AF1A6DA008E5073 /* WJnanaAPIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DE491F4A29AAAD2500F7AFCC /* WBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBookCell.swift; sourceTree = "<group>"; };
-		DE4BBA4B28CBCB5D008C81BD /* WInjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WInjectService.swift; sourceTree = "<group>"; };
 		DE5C765928CB4F2400E79DB5 /* wisdom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wisdom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5C765C28CB4F2400E79DB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE5C765E28CB4F2400E79DB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +50,8 @@
 		DE5C768828CB593500E79DB5 /* WBooksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBooksService.swift; sourceTree = "<group>"; };
 		DE5C768A28CB595700E79DB5 /* WBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBook.swift; sourceTree = "<group>"; };
 		DE5C768C28CB59B600E79DB5 /* WVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WVerse.swift; sourceTree = "<group>"; };
+		DE8F1DDC2AF1A6B7008E5073 /* WNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WNetworkService.swift; sourceTree = "<group>"; };
+		DE8F1DDE2AF1A6DA008E5073 /* WJnanaAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WJnanaAPIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +124,10 @@
 		DE5C768028CB533400E79DB5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				DE5C767028CB4FDE00E79DB5 /* WCoreDataService.swift */,
+				DE8F1DDC2AF1A6B7008E5073 /* WNetworkService.swift */,
+				DE8F1DDE2AF1A6DA008E5073 /* WJnanaAPIService.swift */,
 				DE5C768828CB593500E79DB5 /* WBooksService.swift */,
-				DE4BBA4B28CBCB5D008C81BD /* WInjectService.swift */,
+				DE5C767028CB4FDE00E79DB5 /* WCoreDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -220,6 +224,8 @@
 				DE5C766128CB4F2400E79DB5 /* WLibraryVC.swift in Sources */,
 				DE5C765D28CB4F2400E79DB5 /* AppDelegate.swift in Sources */,
 				DE491F4B29AAAD2500F7AFCC /* WBookCell.swift in Sources */,
+				DE8F1DDF2AF1A6DA008E5073 /* WJnanaAPIService.swift in Sources */,
+				DE8F1DDD2AF1A6B7008E5073 /* WNetworkService.swift in Sources */,
 				DE5C767828CB513900E79DB5 /* UIFont+Wisdom.swift in Sources */,
 				DE5C767C28CB51B500E79DB5 /* wisdom.xcdatamodeld in Sources */,
 				DE5C765F28CB4F2400E79DB5 /* SceneDelegate.swift in Sources */,

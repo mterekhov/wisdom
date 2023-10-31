@@ -13,7 +13,7 @@ let OvalButtonsWidth: CGFloat = 300
 
 extension UIButton {
         
-    static public func wisdom_createRoundBackButton(_ buttonSize: CGFloat) -> UIButton {
+    static func wisdom_createRoundBackButton(_ buttonSize: CGFloat) -> UIButton {
         let newBackButton = UIButton(type: .custom)
         
         newBackButton.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +24,7 @@ extension UIButton {
         return newBackButton
     }
 
-    static public func wisdom_createOvalButton() -> UIButton {
+    static func wisdom_createOvalButton() -> UIButton {
         let newButton = UIButton(frame: .zero)
         
         newButton.translatesAutoresizingMaskIntoConstraints = false

@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CDText" representedClassName="CDText" syncable="YES" codeGenerationType="class">
-        <attribute name="author" optional="YES" attributeType="String"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="year" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="versesList" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="CDVerse" inverseName="text" inverseEntity="CDVerse"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDBook" representedClassName="CDBook" syncable="YES" codeGenerationType="class">
+        <attribute name="english" optional="YES" attributeType="String"/>
+        <attribute name="iast" optional="YES" attributeType="String"/>
+        <attribute name="sanskrit" optional="YES" attributeType="String"/>
+        <relationship name="versesList" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="CDVerse" inverseName="book" inverseEntity="CDVerse"/>
     </entity>
     <entity name="CDVerse" representedClassName="CDVerse" syncable="YES" codeGenerationType="class">
         <attribute name="english" optional="YES" attributeType="String"/>
         <attribute name="iast" optional="YES" attributeType="String"/>
+        <attribute name="index" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="sanskrit" optional="YES" attributeType="String"/>
-        <relationship name="text" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDText" inverseName="versesList" inverseEntity="CDText"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDBook" inverseName="versesList" inverseEntity="CDBook"/>
     </entity>
-    <elements>
-        <element name="CDText" positionX="-63" positionY="-18" width="128" height="89"/>
-        <element name="CDVerse" positionX="-54" positionY="-9" width="128" height="89"/>
-    </elements>
 </model>

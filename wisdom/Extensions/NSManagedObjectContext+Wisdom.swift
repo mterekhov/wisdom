@@ -10,7 +10,7 @@ import CoreData
 extension NSManagedObjectContext {
     
     /// Simple wrapper to save context
-    public func wisdom_saveContext() {
+    func wisdom_saveContext() {
         if !hasChanges {
             return
         }

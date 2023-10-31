@@ -11,3 +11,9 @@
 "MainMenuSettingsItem" = "settings";
 
 "TextsListTitle" = "Texts";
+
+"NetworkServiceError.IncorrectResponse" = "incorrect response received from server";
+"NetworkServiceError.ServerSideError" = "there is an error on server side application";
+"NetworkServiceError.UnknownServerError" = "there is an unknown error on server side";
+
+"JnanaAPIService.FailedSendRequest" = "failed to send request to server";
