@@ -12,7 +12,8 @@ class WLibraryVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
     private let itemsPerRow: CGFloat = 3
     private let minimumItemSpacing: CGFloat = 8
     private let sectionInsets = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 20.0, right: 16.0)
-    
+
+    private let activityIndicatorView = WActivityIndicatorView(frame: .zero)
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private var booksService: WBooksServiceProtocol
     private var booksList = [WBook]()
@@ -113,7 +114,13 @@ class WLibraryVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
     }
     
     private func updateBooksList() {
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicatorView.startAnimating()
+        }
         booksService.fetchBooksList(nil) { [weak self] fetchedResult in
+            DispatchQueue.main.async { [weak self] in
+                self?.activityIndicatorView.stopAnimating()
+            }
             switch fetchedResult {
             case .success(let fetchedBooksList):
                 self?.refreshBooksList(fetchedBooksList)
@@ -148,11 +155,19 @@ class WLibraryVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
         collectionView.register(WBookCell.self, forCellWithReuseIdentifier: WBookCell.reuseID)
         view.addSubview(collectionView)
         
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(activityIndicatorView)
+        
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            activityIndicatorView.topAnchor.constraint(equalTo: view.topAnchor),
+            activityIndicatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            activityIndicatorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            activityIndicatorView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }

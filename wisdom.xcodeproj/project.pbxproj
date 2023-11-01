@@ -27,6 +27,7 @@
 		DE5C768D28CB59B600E79DB5 /* WVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C768C28CB59B600E79DB5 /* WVerse.swift */; };
 		DE8F1DDD2AF1A6B7008E5073 /* WNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F1DDC2AF1A6B7008E5073 /* WNetworkService.swift */; };
 		DE8F1DDF2AF1A6DA008E5073 /* WJnanaAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F1DDE2AF1A6DA008E5073 /* WJnanaAPIService.swift */; };
+		DE8F1DE12AF2FB6C008E5073 /* WActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F1DE02AF2FB6C008E5073 /* WActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		DE5C768C28CB59B600E79DB5 /* WVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WVerse.swift; sourceTree = "<group>"; };
 		DE8F1DDC2AF1A6B7008E5073 /* WNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WNetworkService.swift; sourceTree = "<group>"; };
 		DE8F1DDE2AF1A6DA008E5073 /* WJnanaAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WJnanaAPIService.swift; sourceTree = "<group>"; };
+		DE8F1DE02AF2FB6C008E5073 /* WActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		DE5C765B28CB4F2400E79DB5 /* wisdom */ = {
 			isa = PBXGroup;
 			children = (
+				DE8F1DE02AF2FB6C008E5073 /* WActivityIndicatorView.swift */,
 				DE4BBA4D28CBCC5C008C81BD /* Model */,
 				DE5C767F28CB532D00E79DB5 /* Extensions */,
 				DE5C768028CB533400E79DB5 /* Services */,
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE5C768B28CB595700E79DB5 /* WBook.swift in Sources */,
+				DE8F1DE12AF2FB6C008E5073 /* WActivityIndicatorView.swift in Sources */,
 				DE5C768528CB53CE00E79DB5 /* UIButton+Wisdom.swift in Sources */,
 				DE5C768D28CB59B600E79DB5 /* WVerse.swift in Sources */,
 				DE5C768928CB593500E79DB5 /* WBooksService.swift in Sources */,
