@@ -29,6 +29,12 @@ protocol WBooksServiceProtocol {
 }
 
 class WBooksService: WBooksServiceProtocol {
+    
+    private let ResponsesListKey = "responses_list"
+    private let SanskritKey = "sanskrit"
+    private let EnglishKey = "english"
+    private let IASTKey = "iast"
+    private let BookUUIDKey = "book_id"
 
     var coreDataService: WCoreDataServiceProtocol?
     var jnanaAPIService: WJnanaAPIServiceProtocol
@@ -131,14 +137,14 @@ class WBooksService: WBooksServiceProtocol {
 
     private func parseJSONBook(json: [String:Any]) -> [WBook] {
         var booksList =  [WBook]()
-        guard let responsesList = json["responses_list"] as? [[String:Any]] else { return booksList };
+        guard let responsesList = json[ResponsesListKey] as? [[String:Any]] else { return booksList };
         guard let booksListResponse = responsesList.first else { return booksList }
-        guard let payload = booksListResponse["payload"] as? [[String:Any]] else { return booksList };
+        guard let payload = booksListResponse[PayloadKey] as? [[String:Any]] else { return booksList };
         payload.forEach { bookJSON in
-            let newBook = WBook(sanskrit: (bookJSON["sanskrit"] as? String) ?? "",
-                                english: (bookJSON["english"] as? String) ?? "",
-                                iast: (bookJSON["iast"] as? String) ?? "",
-                                uuid: (bookJSON["book_id"] as? String) ?? "")
+            let newBook = WBook(sanskrit: (bookJSON[SanskritKey] as? String) ?? "",
+                                english: (bookJSON[EnglishKey] as? String) ?? "",
+                                iast: (bookJSON[IASTKey] as? String) ?? "",
+                                uuid: (bookJSON[BookUUIDKey] as? String) ?? "")
             booksList.append(newBook)
         }
         

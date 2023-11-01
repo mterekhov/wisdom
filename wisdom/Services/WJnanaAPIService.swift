@@ -10,6 +10,8 @@ import Foundation
 typealias BooksListCompletionHandler = (_ result: Result<[String:Any], Error>) -> Void
 typealias VersesListCompletionHandler = (_ result: Result<[String:Any], Error>) -> Void
 
+let PayloadKey = "payload"
+
 enum WJnanaAPIServiceError: LocalizedError {
     
     case failedToSendRequest
@@ -32,7 +34,6 @@ class WJnanaAPIService: WJnanaAPIServiceProtocol {
     
     private let RequestsListKey = "requests_list"
     private let RequestNameKey = "name"
-    private let RequestPayloadKey = "payload"
     private let RequestNameBooksListKey = "books_list"
     private let RequestNameBookContentKey = "book_content"
     private let RequestNameBookSourcesListKey = "books_source"
@@ -89,7 +90,7 @@ class WJnanaAPIService: WJnanaAPIServiceProtocol {
 
     private func generateRequestString(requestName: String, parameters: [String:String] = [String:String]()) -> String {
         var requestString = "{\"\(RequestsListKey)\":["
-        requestString += "{\"\(RequestNameKey)\":\"\(requestName)\",\"\(RequestPayloadKey)\":{"
+        requestString += "{\"\(RequestNameKey)\":\"\(requestName)\",\"\(PayloadKey)\":{"
 
         parameters.forEach { (key: String, value: String) in
             requestString += "\"\(key)\":\"\(value)\","
