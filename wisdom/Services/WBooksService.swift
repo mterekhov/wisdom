@@ -18,14 +18,19 @@ enum WBooksServiceError: LocalizedError {
 
 typealias BooksListFetchCompletionHandler = (_ fetchedBooksList: Result<[WBook], Error>) -> Void
 typealias BooksListDownloadCompletionHandler = (_ jsonBooksList: Result<[WBook], Error>) -> Void
+typealias VersesListDownloadCompletionHandler = (_ jsonVersesList: Result<[WVerse], Error>) -> Void
 typealias VoidCompletionHandler = () -> Void
 
 protocol WBooksServiceProtocol {
     
-    func saveBooksList(_ booksList: [WBook], _ completionHandler: @escaping VoidCompletionHandler)
     func fetchBooksList(_ searchTitleString: String?, _ completionBlock: @escaping BooksListFetchCompletionHandler)
+    func fetchVerses(_ bookID: String, _ completionBlock: @escaping BooksListFetchCompletionHandler)
+    func saveBooksList(_ booksList: [WBook], _ completionHandler: @escaping VoidCompletionHandler)
+    func saveVersesList(_ versesList: [WVerse], _ completionHandler: @escaping VoidCompletionHandler)
     func downloadBooksList(_ completionBlock: @escaping BooksListDownloadCompletionHandler)
     
+    func downloadVersesList(_ bookID: String, _ completionBlock: @escaping VersesListDownloadCompletionHandler)
+
 }
 
 class WBooksService: WBooksServiceProtocol {
@@ -34,7 +39,8 @@ class WBooksService: WBooksServiceProtocol {
     private let SanskritKey = "sanskrit"
     private let EnglishKey = "english"
     private let IASTKey = "iast"
-    private let BookUUIDKey = "book_id"
+    private let IndexKey = "index"
+    private let UUIDKey = "uuid"
 
     var coreDataService: WCoreDataServiceProtocol?
     var jnanaAPIService: WJnanaAPIServiceProtocol
@@ -44,28 +50,37 @@ class WBooksService: WBooksServiceProtocol {
         self.jnanaAPIService = jnanaAPIService
     }
 
-    //  MARK: - WTextsServiceProtocol -
+    //  MARK: - WBooksServiceProtocol -
 
-    private func doesBookExists(_ bookID: String, localContext: NSManagedObjectContext) -> Bool {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: CDBook.entity().name ?? "")
-        fetchRequest.predicate = NSPredicate(format: "uuid CONTAINS[cd] %@", bookID)
-
-        do {
-            guard let coredataBooksList = try localContext.fetch(fetchRequest) as? [CDBook] else {
-                return false
-            }
-            
-            if coredataBooksList.count > 0 {
-                return true
+    func downloadVersesList(_ bookID: String, _ completionBlock: @escaping VersesListDownloadCompletionHandler) {
+        jnanaAPIService.booksList { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let versesListJSON):
+                completionBlock(.success(self.parseJSONVersesList(json: versesListJSON)))
+            case .failure(let error):
+                completionBlock(.failure(error))
+                break;
             }
         }
-        catch _ {
-            return false
-        }
-        
-        return false
     }
-    
+
+    func fetchBooksList(_ searchTitleString: String?, _ completionBlock: @escaping BooksListFetchCompletionHandler) {
+        if let searchTitleString = searchTitleString {
+            fetchBook([EnglishKey: searchTitleString], completionBlock)
+        }
+        else {
+            fetchBook(nil, completionBlock)
+        }
+    }
+
+    func fetchVerses(_ bookID: String, _ completionBlock: @escaping BooksListFetchCompletionHandler) {
+        fetchBook([UUIDKey: bookID], completionBlock)
+    }
+
+    func saveVersesList(_ versesList: [WVerse], _ completionHandler: @escaping VoidCompletionHandler) {
+    }
+
     func saveBooksList(_ booksList: [WBook], _ completionHandler: @escaping VoidCompletionHandler) {
         guard let coreDataService = coreDataService else {
             completionHandler()
@@ -75,48 +90,22 @@ class WBooksService: WBooksServiceProtocol {
         coreDataService.asyncExecute { [weak self] localContext in
             guard let self = self else { return }
             booksList.forEach { book in
-                if self.doesBookExists(book.uuid, localContext: localContext) == false {
-                    let newBook = CDBook(context: localContext)
-                    newBook.sanskrit = book.sanskrit
-                    newBook.iast = book.iast
-                    newBook.english = book.english
-                    newBook.uuid = book.uuid
-                    localContext.wisdom_saveContext()
+                switch self.fetchBook([self.UUIDKey:book.uuid], localContext) {
+                case .success(let checkedBooksList):
+                    if checkedBooksList.isEmpty {
+                        let newBook = CDBook(context: localContext)
+                        newBook.sanskrit = book.sanskrit
+                        newBook.iast = book.iast
+                        newBook.english = book.english
+                        newBook.uuid = book.uuid
+                        localContext.wisdom_saveContext()
+                    }
+                case .failure(_):
+                    break
                 }
             }
             
             completionHandler()
-        }
-    }
-    
-    func fetchBooksList(_ searchTitleString: String?, _ completionBlock: @escaping BooksListFetchCompletionHandler) {
-        guard let coreDataService = coreDataService else {
-            completionBlock(.failure(WBooksServiceError.coreDataError))
-            return
-        }
-
-        coreDataService.asyncExecute { [weak self] localContext in
-            guard let self = self else {
-                return
-            }
-            
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: CDBook.entity().name ?? "")
-            if let searchTitleString = searchTitleString,
-               !searchTitleString.isEmpty {
-                fetchRequest.predicate = NSPredicate(format: "english CONTAINS[cd] %@", searchTitleString)
-            }
-
-            do {
-                guard let coredataBooksList = try localContext.fetch(fetchRequest) as? [CDBook] else {
-                    completionBlock(.failure(WBooksServiceError.coreDataError))
-                    return
-                }
-                completionBlock(.success(self.convertBooksListIntoViewModel(coredataBooksList)))
-            }
-            catch _ {
-                completionBlock(.failure(WBooksServiceError.coreDataError))
-                return
-            }
         }
     }
     
@@ -135,6 +124,43 @@ class WBooksService: WBooksServiceProtocol {
     
     //  MARK: - Routine -
 
+    private func fetchBook(_ search: [String:String]?, _ completionBlock: @escaping BooksListFetchCompletionHandler) {
+        guard let coreDataService = coreDataService else {
+            completionBlock(.failure(WBooksServiceError.coreDataError))
+            return
+        }
+
+        coreDataService.asyncExecute { [weak self] localContext in
+            guard let self = self else {
+                return
+            }
+            
+            completionBlock(self.fetchBook(search, localContext))
+        }
+    }
+
+    private func fetchBook(_ search: [String:String]?, _ localContext: NSManagedObjectContext) -> Result<[WBook], Error>{
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: CDBook.entity().name ?? "")
+        if let search = search {
+            var predicateString = ""
+            search.forEach { (key: String, value: String) in
+                predicateString += "(\(key) CONTAINS[CD] '\(value)') AND "
+            }
+            predicateString.removeLast(5)
+            fetchRequest.predicate = NSPredicate(format: predicateString)
+        }
+
+        do {
+            guard let coredataBooksList = try localContext.fetch(fetchRequest) as? [CDBook] else {
+                return .failure(WBooksServiceError.coreDataError)
+            }
+            return .success(self.convertBooksListIntoViewModel(coredataBooksList))
+        }
+        catch _ {
+            return .failure(WBooksServiceError.coreDataError)
+        }
+    }
+    
     private func parseJSONBook(json: [String:Any]) -> [WBook] {
         var booksList =  [WBook]()
         guard let responsesList = json[ResponsesListKey] as? [[String:Any]] else { return booksList };
@@ -144,11 +170,27 @@ class WBooksService: WBooksServiceProtocol {
             let newBook = WBook(sanskrit: (bookJSON[SanskritKey] as? String) ?? "",
                                 english: (bookJSON[EnglishKey] as? String) ?? "",
                                 iast: (bookJSON[IASTKey] as? String) ?? "",
-                                uuid: (bookJSON[BookUUIDKey] as? String) ?? "")
+                                uuid: (bookJSON[BookIDKey] as? String) ?? "")
             booksList.append(newBook)
         }
         
         return booksList
+    }
+    
+    private func parseJSONVersesList(json: [String:Any]) -> [WVerse] {
+        var versesList =  [WVerse]()
+        guard let responsesList = json[ResponsesListKey] as? [[String:Any]] else { return versesList };
+        guard let versesListResponse = responsesList.first else { return versesList }
+        guard let payload = versesListResponse[PayloadKey] as? [[String:Any]] else { return versesList };
+        payload.forEach { verseJSON in
+            let newVerse = WVerse(sanskrit: (verseJSON[SanskritKey] as? String) ?? "",
+                                  english: (verseJSON[EnglishKey] as? String) ?? "",
+                                  iast: (verseJSON[IASTKey] as? String) ?? "",
+                                  index: (verseJSON[IndexKey] as? Int) ?? 0)
+            versesList.append(newVerse)
+        }
+        
+        return versesList
     }
     
     private func convertBooksListIntoViewModel(_ coreDataBooksList: [CDBook]?) -> [WBook] {

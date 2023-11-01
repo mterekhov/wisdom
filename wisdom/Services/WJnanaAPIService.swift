@@ -11,6 +11,7 @@ typealias BooksListCompletionHandler = (_ result: Result<[String:Any], Error>) -
 typealias VersesListCompletionHandler = (_ result: Result<[String:Any], Error>) -> Void
 
 let PayloadKey = "payload"
+let BookIDKey = "book_id"
 
 enum WJnanaAPIServiceError: LocalizedError {
     
@@ -66,7 +67,19 @@ class WJnanaAPIService: WJnanaAPIServiceProtocol {
     }
     
     func bookContent(_ bookID: String, _ completionBlock: @escaping VersesListCompletionHandler) {
-
+        let requestString = generateRequestString(requestName: RequestNameBookContentKey, parameters: [BookIDKey:bookID])
+        if ((networkService.sendPOSTRequest(host: host, link: "", httpBody: Data(requestString.utf8)) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+                case .success(let responseData):
+                let json = self.parseResponse(jsonData: responseData)
+                completionBlock(.success(json))
+                case .failure(let error):
+                completionBlock(.failure(error))
+            }
+        }) == false) {
+            completionBlock(.failure(WJnanaAPIServiceError.failedToSendRequest))
+        }
     }
     
     //  MARK: - Routine -
