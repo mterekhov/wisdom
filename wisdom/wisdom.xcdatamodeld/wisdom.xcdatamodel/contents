@@ -4,6 +4,7 @@
         <attribute name="english" optional="YES" attributeType="String"/>
         <attribute name="iast" optional="YES" attributeType="String"/>
         <attribute name="sanskrit" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="String"/>
         <relationship name="versesList" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="CDVerse" inverseName="book" inverseEntity="CDVerse"/>
     </entity>
     <entity name="CDVerse" representedClassName="CDVerse" syncable="YES" codeGenerationType="class">

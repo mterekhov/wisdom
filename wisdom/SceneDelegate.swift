@@ -18,7 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         let jnanaAPIService = WJnanaAPIService(WNetworkService())
-        let bookService = WBooksService((UIApplication.shared as? AppDelegate)?.coreDataService, jnanaAPIService)
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let coreDataService = appDelegate?.coreDataService
+        let bookService = WBooksService(coreDataService, jnanaAPIService)
         let viewController = WLibraryVC(booksService: bookService)
         let navvc = UINavigationController(rootViewController: viewController)
         navvc.isNavigationBarHidden = true

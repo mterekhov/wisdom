@@ -16,4 +16,5 @@
 "NetworkServiceError.ServerSideError" = "there is an error on server side application";
 "NetworkServiceError.UnknownServerError" = "there is an unknown error on server side";
 
-"JnanaAPIService.FailedSendRequest" = "failed to send request to server";
+"BookServiceError.FailedSendRequest" = "failed to send request to server";
+"BookServiceError.CoreDataError" = "database error";

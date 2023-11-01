@@ -19,7 +19,7 @@ extension NSManagedObjectContext {
             try save()
         }
         catch let error {
-            print(error)
+            print(error.localizedDescription)
             return
         }
     }

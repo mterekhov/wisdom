@@ -49,8 +49,7 @@ class WJnanaAPIService: WJnanaAPIServiceProtocol {
     //  MARK: - WJnanaAPIServiceProtocol -
 
     func booksList(_ completionBlock: @escaping BooksListCompletionHandler) {
-        var requestString = generateRequestString(requestName: RequestNameBooksListKey)
-        print(requestString)
+        let requestString = generateRequestString(requestName: RequestNameBooksListKey)
         if ((networkService.sendPOSTRequest(host: host, link: "", httpBody: Data(requestString.utf8)) { [weak self] result in
             guard let self = self else { return }
             switch result {

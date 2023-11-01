@@ -8,7 +8,7 @@ class WBookCell: UICollectionViewCell {
     private let TitleFontSize: CGFloat = 14
     private let SideOffset: CGFloat = 2
 
-    private var book = WBook(sanskrit: "", english: "", iast: "")
+    private var book = WBook(sanskrit: "", english: "", iast: "", uuid: "")
     private let titleLabel = UILabel(frame: .zero)
     private let authorLabel = UILabel(frame: .zero)
 
@@ -29,8 +29,7 @@ class WBookCell: UICollectionViewCell {
     }
     
     func configureCell(_ assignBook: WBook) {
-//        authorLabel.text = assignBook.author
-//        titleLabel.text = assignBook.title
+        titleLabel.text = assignBook.sanskrit
     }
     
     // MARK: - Routine -

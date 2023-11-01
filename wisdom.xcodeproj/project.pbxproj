@@ -124,9 +124,9 @@
 		DE5C768028CB533400E79DB5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DE5C768828CB593500E79DB5 /* WBooksService.swift */,
 				DE8F1DDC2AF1A6B7008E5073 /* WNetworkService.swift */,
 				DE8F1DDE2AF1A6DA008E5073 /* WJnanaAPIService.swift */,
-				DE5C768828CB593500E79DB5 /* WBooksService.swift */,
 				DE5C767028CB4FDE00E79DB5 /* WCoreDataService.swift */,
 			);
 			path = Services;

@@ -6,5 +6,6 @@ struct WBook {
     var sanskrit: String
     var english: String
     var iast: String
+    var uuid: String
     
 }

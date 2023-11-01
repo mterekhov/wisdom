@@ -20,6 +20,7 @@ class WLibraryVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
     init(booksService: WBooksServiceProtocol, booksList: [WBook] = [WBook]()) {
         self.booksService = booksService
         self.booksList = booksList
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,6 +33,7 @@ class WLibraryVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
         
         createLayout()
         updateBooksList()
+        downloadBooksList()
     }
     
     // MARK: - UICollectionViewDelegateFlowLayout -
@@ -96,18 +98,40 @@ class WLibraryVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
     
     // MARK: - Routine -
     
+    private func refreshBooksList(_ newBooksList: [WBook]?) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {
+                return
+            }
+            
+            guard let newBooksList = newBooksList else {
+                return
+            }
+            self.booksList = newBooksList
+            self.collectionView.reloadData()
+        }
+    }
+    
     private func updateBooksList() {
-        booksService.fetchBooks(nil) { fetchedBooksList in
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else {
-                    return
+        booksService.fetchBooksList(nil) { [weak self] fetchedResult in
+            switch fetchedResult {
+            case .success(let fetchedBooksList):
+                self?.refreshBooksList(fetchedBooksList)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func downloadBooksList() {
+        booksService.downloadBooksList { [weak self] downloadedResult in
+            switch downloadedResult {
+            case .success(let downloadedBooksList):
+                self?.booksService.saveBooksList(downloadedBooksList) {
+                    self?.updateBooksList()
                 }
-                
-                guard let fetchedBooksList = fetchedBooksList else {
-                    return
-                }
-                self.booksList = fetchedBooksList
-                self.collectionView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
