@@ -16,7 +16,6 @@ enum WBooksServiceError: LocalizedError {
     }
 }
 
-typealias BooksListFetchCompletionHandler = (_ fetchedBooksList: Result<[WBook], Error>) -> Void
 typealias VoidCompletionHandler = () -> Void
 
 protocol WBooksServiceProtocol {
@@ -24,10 +23,11 @@ protocol WBooksServiceProtocol {
     func downloadBooksList() async -> Result<[WBook], Error>
     func downloadVersesList(_ bookID: String) async -> Result<[WVerse], Error>
 
-    func fetchBooksList(_ searchTitleString: String?, _ completionBlock: @escaping BooksListFetchCompletionHandler)
-    func fetchVerses(_ bookID: String, _ completionBlock: @escaping BooksListFetchCompletionHandler)
-    func saveBooksList(_ booksList: [WBook], _ completionHandler: @escaping VoidCompletionHandler)
-    func saveVersesList(_ versesList: [WVerse], _ completionHandler: @escaping VoidCompletionHandler)
+    func fetchBooksList(_ searchTitleString: String?) async -> Result<[WBook], Error>
+    func fetchVerses(_ bookID: String) async -> Result<[WBook], Error>
+
+    func saveBooksList(_ booksList: [WBook]) async
+    func saveVersesList(_ versesList: [WVerse]) async
 
 }
 
@@ -60,47 +60,42 @@ class WBooksService: WBooksServiceProtocol {
         }
     }
 
-    func fetchBooksList(_ searchTitleString: String?, _ completionBlock: @escaping BooksListFetchCompletionHandler) {
+    func fetchBooksList(_ searchTitleString: String?) async -> Result<[WBook], Error> {
         if let searchTitleString = searchTitleString {
-            fetchBook([EnglishKey: searchTitleString], completionBlock)
+            return await fetchBook([EnglishKey: searchTitleString])
         }
         else {
-            fetchBook(nil, completionBlock)
+            return await fetchBook(nil)
         }
     }
 
-    func fetchVerses(_ bookID: String, _ completionBlock: @escaping BooksListFetchCompletionHandler) {
-        fetchBook([UUIDKey: bookID], completionBlock)
+    func fetchVerses(_ bookID: String) async -> Result<[WBook], Error> {
+        return await fetchBook([UUIDKey: bookID])
     }
 
-    func saveVersesList(_ versesList: [WVerse], _ completionHandler: @escaping VoidCompletionHandler) {
+    func saveVersesList(_ versesList: [WVerse]) async {
     }
 
-    func saveBooksList(_ booksList: [WBook], _ completionHandler: @escaping VoidCompletionHandler) {
+    func saveBooksList(_ booksList: [WBook]) async {
         guard let coreDataService = coreDataService else {
-            completionHandler()
             return
         }
         
-        coreDataService.asyncExecute { [weak self] localContext in
-            guard let self = self else { return }
-            booksList.forEach { book in
-                switch self.fetchBook([self.UUIDKey:book.uuid], localContext) {
-                case .success(let checkedBooksList):
-                    if checkedBooksList.isEmpty {
-                        let newBook = CDBook(context: localContext)
-                        newBook.sanskrit = book.sanskrit
-                        newBook.iast = book.iast
-                        newBook.english = book.english
-                        newBook.uuid = book.uuid
-                        localContext.wisdom_saveContext()
-                    }
-                case .failure(_):
-                    break
+        let localContext = await coreDataService.asyncExecute()
+        booksList.forEach { book in
+            switch self.fetchBook([self.UUIDKey:book.uuid], localContext) {
+            case .success(let checkedBooksList):
+                if checkedBooksList.isEmpty {
+                    let newBook = CDBook(context: localContext)
+                    newBook.sanskrit = book.sanskrit
+                    newBook.iast = book.iast
+                    newBook.english = book.english
+                    newBook.uuid = book.uuid
+                    localContext.wisdom_saveContext()
                 }
+            case .failure(_):
+                break
             }
-            
-            completionHandler()
         }
     }
     
@@ -116,19 +111,13 @@ class WBooksService: WBooksServiceProtocol {
     
     //  MARK: - Routine -
 
-    private func fetchBook(_ search: [String:String]?, _ completionBlock: @escaping BooksListFetchCompletionHandler) {
+    private func fetchBook(_ search: [String:String]?) async -> Result<[WBook], Error>{
         guard let coreDataService = coreDataService else {
-            completionBlock(.failure(WBooksServiceError.coreDataError))
-            return
+            return .failure(WBooksServiceError.coreDataError)
         }
 
-        coreDataService.asyncExecute { [weak self] localContext in
-            guard let self = self else {
-                return
-            }
-            
-            completionBlock(self.fetchBook(search, localContext))
-        }
+        let localContext = await coreDataService.asyncExecute()
+        return fetchBook(search, localContext)
     }
 
     private func fetchBook(_ search: [String:String]?, _ localContext: NSManagedObjectContext) -> Result<[WBook], Error>{

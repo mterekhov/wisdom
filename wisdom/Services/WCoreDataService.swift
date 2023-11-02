@@ -12,8 +12,8 @@ protocol WCoreDataServiceProtocol {
     
     /// creates and provides local context object for operation in asynchronous mode
     /// - Parameter completionHandler: block will be launched after the local context is created, local context will be put to this block as parameter
-    func asyncExecute(_ completionHandler: @escaping ((NSManagedObjectContext) -> Void))
-    
+    func asyncExecute() async -> NSManagedObjectContext
+
     /// creates and provides local context in sync mode
     /// - Parameter completionHandler: block which will launched after the local context is created
     func execute(_ completionHandler: ((NSManagedObjectContext) -> Void))
@@ -38,25 +38,15 @@ class WCoreDataService: WCoreDataServiceProtocol {
 
     //  MARK: - WCoreDataServiceProtocol -
     
-    func asyncExecuteEx<T>(_ completionHandler: @escaping ((NSManagedObjectContext) -> T)) async -> T {
-//        guard let persistentContainer = persistentContainer else {
-//            return
-//        }
-//        
-        return await persistentContainer.performBackgroundTask(completionHandler)
-    }
-    
-    func asyncExecute(_ completionHandler: @escaping ((NSManagedObjectContext) -> Void)) {
-//        guard let persistentContainer = persistentContainer else {
-//            return
-//        }
-        persistentContainer.performBackgroundTask(completionHandler)
+    func asyncExecute() async -> NSManagedObjectContext {
+        return await withCheckedContinuation { continuation in
+            persistentContainer.performBackgroundTask { localContext in
+                continuation.resume(with: .success(localContext))
+            }
+        }
     }
     
     func execute(_ completionHandler: ((NSManagedObjectContext) -> Void)) {
-//        guard let persistentContainer = persistentContainer else {
-//            return
-//        }
         let localContext = persistentContainer.newBackgroundContext()
         localContext.performAndWait {
             completionHandler(localContext)
@@ -64,10 +54,6 @@ class WCoreDataService: WCoreDataServiceProtocol {
     }
     
     func saveRootContext() {
-//        guard let persistentContainer = self.persistentContainer else {
-//            return
-//        }
-//        
         persistentContainer.viewContext.wisdom_saveContext()
     }
 

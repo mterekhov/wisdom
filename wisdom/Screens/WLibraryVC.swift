@@ -117,13 +117,15 @@ class WLibraryVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
         DispatchQueue.main.async { [weak self] in
             self?.activityIndicatorView.startAnimating()
         }
-        booksService.fetchBooksList(nil) { [weak self] fetchedResult in
+        Task { [weak self] in
+            guard let self = self else { return }
+            let fetchedResult = await self.booksService.fetchBooksList(nil)
             DispatchQueue.main.async { [weak self] in
                 self?.activityIndicatorView.stopAnimating()
             }
             switch fetchedResult {
             case .success(let fetchedBooksList):
-                self?.refreshBooksList(fetchedBooksList)
+                self.refreshBooksList(fetchedBooksList)
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -136,9 +138,8 @@ class WLibraryVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
             let downloadedResult = await self.booksService.downloadBooksList()
             switch downloadedResult {
             case .success(let downloadedBooksList):
-                self.booksService.saveBooksList(downloadedBooksList) {
-                    self.updateBooksList()
-                }
+                await self.booksService.saveBooksList(downloadedBooksList)
+                self.updateBooksList()
             case .failure(let error):
                 print(error.localizedDescription)
             }
