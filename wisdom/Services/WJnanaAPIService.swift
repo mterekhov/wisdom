@@ -13,21 +13,12 @@ typealias VersesListCompletionHandler = (_ result: Result<[String:Any], Error>) 
 let PayloadKey = "payload"
 let BookIDKey = "book_id"
 
-enum WJnanaAPIServiceError: LocalizedError {
-    
-    case failedToSendRequest
-    
-    var errorDescription: String? {
-        switch self {
-        case .failedToSendRequest:
-            return "JnanaAPIService.FailedSendRequest".local
-        }
-    }
+enum WJnanaAPIServiceError: LocalizedError {    
 }
 protocol WJnanaAPIServiceProtocol {
     
-    func booksList(_ completionBlock: @escaping BooksListCompletionHandler)
-    func bookContent(_ bookID: String, _ completionBlock: @escaping VersesListCompletionHandler)
+    func booksList() async -> Result<[String:Any], Error>
+    func bookContent(_ bookID: String) async -> Result<[String:Any], Error>
 
 }
 
@@ -50,35 +41,25 @@ class WJnanaAPIService: WJnanaAPIServiceProtocol {
 
     //  MARK: - WJnanaAPIServiceProtocol -
 
-    func booksList(_ completionBlock: @escaping BooksListCompletionHandler) {
+    func booksList() async -> Result<[String:Any], Error> {
         let requestString = generateRequestString(requestName: RequestNameBooksListKey)
-        if ((networkService.sendPOSTRequest(host: host, link: "", httpBody: Data(requestString.utf8)) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-                case .success(let responseData):
-                let json = self.parseResponse(jsonData: responseData)
-                completionBlock(.success(json))
-                case .failure(let error):
-                completionBlock(.failure(error))
-            }
-        }) == false) {
-            completionBlock(.failure(WJnanaAPIServiceError.failedToSendRequest))
+        let responseResult = await networkService.sendPOSTRequest(host: host, link: "", httpBody: Data(requestString.utf8))
+        switch responseResult {
+        case .success(let responseData):
+            return .success(parseResponse(jsonData: responseData))
+        case .failure(let error):
+            return .failure(error)
         }
     }
     
-    func bookContent(_ bookID: String, _ completionBlock: @escaping VersesListCompletionHandler) {
+    func bookContent(_ bookID: String) async -> Result<[String:Any], Error> {
         let requestString = generateRequestString(requestName: RequestNameBookContentKey, parameters: [BookIDKey:bookID])
-        if ((networkService.sendPOSTRequest(host: host, link: "", httpBody: Data(requestString.utf8)) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-                case .success(let responseData):
-                let json = self.parseResponse(jsonData: responseData)
-                completionBlock(.success(json))
-                case .failure(let error):
-                completionBlock(.failure(error))
-            }
-        }) == false) {
-            completionBlock(.failure(WJnanaAPIServiceError.failedToSendRequest))
+        let responseResult = await networkService.sendPOSTRequest(host: host, link: "", httpBody: Data(requestString.utf8))
+        switch responseResult {
+        case .success(let responseData):
+            return .success(parseResponse(jsonData: responseData))
+        case .failure(let error):
+            return .failure(error)
         }
     }
     

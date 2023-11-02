@@ -25,7 +25,7 @@ protocol WCoreDataServiceProtocol {
 
 class WCoreDataService: WCoreDataServiceProtocol {
 
-    private lazy var persistentContainer: NSPersistentContainer? = {
+    private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "wisdom")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -38,17 +38,25 @@ class WCoreDataService: WCoreDataServiceProtocol {
 
     //  MARK: - WCoreDataServiceProtocol -
     
+    func asyncExecuteEx<T>(_ completionHandler: @escaping ((NSManagedObjectContext) -> T)) async -> T {
+//        guard let persistentContainer = persistentContainer else {
+//            return
+//        }
+//        
+        return await persistentContainer.performBackgroundTask(completionHandler)
+    }
+    
     func asyncExecute(_ completionHandler: @escaping ((NSManagedObjectContext) -> Void)) {
-        guard let persistentContainer = persistentContainer else {
-            return
-        }
+//        guard let persistentContainer = persistentContainer else {
+//            return
+//        }
         persistentContainer.performBackgroundTask(completionHandler)
     }
     
     func execute(_ completionHandler: ((NSManagedObjectContext) -> Void)) {
-        guard let persistentContainer = persistentContainer else {
-            return
-        }
+//        guard let persistentContainer = persistentContainer else {
+//            return
+//        }
         let localContext = persistentContainer.newBackgroundContext()
         localContext.performAndWait {
             completionHandler(localContext)
@@ -56,10 +64,10 @@ class WCoreDataService: WCoreDataServiceProtocol {
     }
     
     func saveRootContext() {
-        guard let persistentContainer = self.persistentContainer else {
-            return
-        }
-        
+//        guard let persistentContainer = self.persistentContainer else {
+//            return
+//        }
+//        
         persistentContainer.viewContext.wisdom_saveContext()
     }
 

@@ -17,19 +17,17 @@ enum WBooksServiceError: LocalizedError {
 }
 
 typealias BooksListFetchCompletionHandler = (_ fetchedBooksList: Result<[WBook], Error>) -> Void
-typealias BooksListDownloadCompletionHandler = (_ jsonBooksList: Result<[WBook], Error>) -> Void
-typealias VersesListDownloadCompletionHandler = (_ jsonVersesList: Result<[WVerse], Error>) -> Void
 typealias VoidCompletionHandler = () -> Void
 
 protocol WBooksServiceProtocol {
     
+    func downloadBooksList() async -> Result<[WBook], Error>
+    func downloadVersesList(_ bookID: String) async -> Result<[WVerse], Error>
+
     func fetchBooksList(_ searchTitleString: String?, _ completionBlock: @escaping BooksListFetchCompletionHandler)
     func fetchVerses(_ bookID: String, _ completionBlock: @escaping BooksListFetchCompletionHandler)
     func saveBooksList(_ booksList: [WBook], _ completionHandler: @escaping VoidCompletionHandler)
     func saveVersesList(_ versesList: [WVerse], _ completionHandler: @escaping VoidCompletionHandler)
-    func downloadBooksList(_ completionBlock: @escaping BooksListDownloadCompletionHandler)
-    
-    func downloadVersesList(_ bookID: String, _ completionBlock: @escaping VersesListDownloadCompletionHandler)
 
 }
 
@@ -52,16 +50,13 @@ class WBooksService: WBooksServiceProtocol {
 
     //  MARK: - WBooksServiceProtocol -
 
-    func downloadVersesList(_ bookID: String, _ completionBlock: @escaping VersesListDownloadCompletionHandler) {
-        jnanaAPIService.booksList { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let versesListJSON):
-                completionBlock(.success(self.parseJSONVersesList(json: versesListJSON)))
-            case .failure(let error):
-                completionBlock(.failure(error))
-                break;
-            }
+    func downloadVersesList(_ bookID: String) async -> Result<[WVerse], Error> {
+        let result = await jnanaAPIService.booksList()
+        switch result {
+        case .success(let versesListJSON):
+            return .success(self.parseJSONVersesList(json: versesListJSON))
+        case .failure(let error):
+            return .failure(error)
         }
     }
 
@@ -109,16 +104,13 @@ class WBooksService: WBooksServiceProtocol {
         }
     }
     
-    func downloadBooksList(_ completionBlock: @escaping BooksListDownloadCompletionHandler) {
-        jnanaAPIService.booksList { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let booksJSON):
-                completionBlock(.success(self.parseJSONBook(json: booksJSON)))
-            case .failure(let error):
-                completionBlock(.failure(error))
-                break;
-            }
+    func downloadBooksList() async -> Result<[WBook], Error> {
+        let result = await jnanaAPIService.booksList()
+        switch result {
+        case .success(let booksJSON):
+            return .success(self.parseJSONBook(json: booksJSON))
+        case .failure(let error):
+            return .failure(error)
         }
     }
     

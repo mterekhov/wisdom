@@ -131,11 +131,13 @@ class WLibraryVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
     }
     
     private func downloadBooksList() {
-        booksService.downloadBooksList { [weak self] downloadedResult in
+        Task { [weak self] in
+            guard let self = self else { return }
+            let downloadedResult = await self.booksService.downloadBooksList()
             switch downloadedResult {
             case .success(let downloadedBooksList):
-                self?.booksService.saveBooksList(downloadedBooksList) {
-                    self?.updateBooksList()
+                self.booksService.saveBooksList(downloadedBooksList) {
+                    self.updateBooksList()
                 }
             case .failure(let error):
                 print(error.localizedDescription)

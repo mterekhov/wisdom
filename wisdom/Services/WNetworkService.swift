@@ -7,13 +7,12 @@
 
 import Foundation
 
-typealias NetworkCompletionHandler = (_ result: Result<Data?, Error>) -> Void
-
 enum WNetworkServiceError: LocalizedError {
     
     case incorrectResponse
     case serverSideError
     case unknownServerError
+    case brokenLink
     
     var errorDescription: String? {
         switch self {
@@ -23,14 +22,16 @@ enum WNetworkServiceError: LocalizedError {
             return "NetworkServiceError.ServerSideError".local
         case .unknownServerError:
             return "NetworkServiceError.UnknownServerError".local
-            
+        case .brokenLink:
+            return "NetworkServiceError.BrokenLink".local
+
         }
     }
 }
 
 protocol WNetworkServiceProtocol {
     
-    func sendPOSTRequest(host: String, link: String, httpBody: Data?, completionBlock: NetworkCompletionHandler?) -> Bool
+    func sendPOSTRequest(host: String, link: String, httpBody: Data?) async -> Result<Data?, Error>
 
 }
 
@@ -40,16 +41,16 @@ class WNetworkService: WNetworkServiceProtocol {
     
     //  MARK: - WNetworkServiceProtocol -
 
-    func sendPOSTRequest(host: String, link: String, httpBody: Data?, completionBlock: NetworkCompletionHandler?) -> Bool {
+    func sendPOSTRequest(host: String, link: String, httpBody: Data?) async -> Result<Data?, Error> {
         //  create URL
         guard let url = URL(string: "http://" + host + "/" + link) else {
-            return false
+            return .failure(WNetworkServiceError.brokenLink)
         }
-
+        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = httpBody
-
+        
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = requestTimeout
         
@@ -57,43 +58,21 @@ class WNetworkService: WNetworkServiceProtocol {
         let session = URLSession(configuration: configuration,
                                  delegate: nil,
                                  delegateQueue: nil)
-
-        let task = session.dataTask(with: request) { data, response, error in
-            guard let completionBlock = completionBlock else {
-                session.invalidateAndCancel()
-                return
+        do {
+            let (data, response) = try await session.data(for: request)
+            guard let httpResponse = response as? HTTPURLResponse else {
+                return .failure(WNetworkServiceError.incorrectResponse)
             }
             
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completionBlock(.failure(WNetworkServiceError.incorrectResponse))
-                session.invalidateAndCancel()
-                return
+            if httpResponse.statusCode !=  200 {
+                return .failure(WNetworkServiceError.serverSideError)
             }
-
-            if error != nil || httpResponse.statusCode !=  200 {
-                if httpResponse.statusCode != 200 {
-                    completionBlock(.failure(WNetworkServiceError.serverSideError))
-                }
-                else {
-                    if let error = error {
-                        completionBlock(.failure(error))
-                    }
-                    else {
-                        completionBlock(.failure(WNetworkServiceError.unknownServerError))
-                    }
-                }
-                session.invalidateAndCancel()
-                
-                return
-            }
-
-            completionBlock(.success(data))
-            session.invalidateAndCancel()
+            
+            return .success(data)
         }
-        
-        task.resume()
-        
-        return true
+        catch {
+            return .failure(error)
+        }
     }
     
 }
