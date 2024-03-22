@@ -7,9 +7,6 @@
 
 import Foundation
 
-typealias BooksListCompletionHandler = (_ result: Result<[String:Any], Error>) -> Void
-typealias VersesListCompletionHandler = (_ result: Result<[String:Any], Error>) -> Void
-
 let PayloadKey = "payload"
 let BookIDKey = "book_id"
 

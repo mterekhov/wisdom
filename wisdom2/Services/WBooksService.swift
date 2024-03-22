@@ -11,8 +11,6 @@ enum WBooksServiceError: String, LocalizedError {
     
 }
 
-typealias VoidCompletionHandler = () -> Void
-
 protocol WBooksServiceProtocol {
     
     func downloadBooksList() async -> Result<[WBook], Error>

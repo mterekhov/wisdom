@@ -49,6 +49,7 @@
 		DE8D15F12B01990E000F3536 /* siddhanta2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE8D15F02B01990E000F3536 /* siddhanta2.ttf */; };
 		DECECB622B1A75E200D9FBF9 /* WWordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECECB612B1A75E200D9FBF9 /* WWordsService.swift */; };
 		DECECB642B1A761E00D9FBF9 /* WWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECECB632B1A761E00D9FBF9 /* WWord.swift */; };
+		DEFDC58A2BADADB400010704 /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFDC5892BADADB400010704 /* types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		DE8D15F02B01990E000F3536 /* siddhanta2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = siddhanta2.ttf; sourceTree = "<group>"; };
 		DECECB612B1A75E200D9FBF9 /* WWordsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWordsService.swift; sourceTree = "<group>"; };
 		DECECB632B1A761E00D9FBF9 /* WWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWord.swift; sourceTree = "<group>"; };
+		DEFDC5892BADADB400010704 /* types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 				DE61B6762B10C09500DDEEF6 /* SettingsScreen */,
 				DE61B67F2B10C22A00DDEEF6 /* SearchScreen */,
 				DE65EBED2B01753400604E50 /* wisdom2App.swift */,
+				DEFDC5892BADADB400010704 /* types.swift */,
 				DE8D15EF2B0195DB000F3536 /* Info.plist */,
 				DE61B6692B0F783500DDEEF6 /* EtelkaMediumProRegular.ttf */,
 				DE8D15F02B01990E000F3536 /* siddhanta2.ttf */,
@@ -432,6 +435,7 @@
 				DE33FACB2B1A8957003D404F /* WEditWordAssembly.swift in Sources */,
 				DE61B6872B10C22A00DDEEF6 /* WWordsListView.swift in Sources */,
 				DE65EC042B01777E00604E50 /* WBookView.swift in Sources */,
+				DEFDC58A2BADADB400010704 /* types.swift in Sources */,
 				DE65EC132B017F0300604E50 /* WCoreDataService.swift in Sources */,
 				DE61B6782B10C0F500DDEEF6 /* WSettingsService.swift in Sources */,
 				DECECB622B1A75E200D9FBF9 /* WWordsService.swift in Sources */,
