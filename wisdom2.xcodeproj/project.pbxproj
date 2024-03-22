@@ -1,0 +1,770 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE034EC12B04089A00534D9D /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE034EC02B04089A00534D9D /* KeyboardViewController.swift */; };
+		DE034EC52B04089A00534D9D /* WisdomKeyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DE034EBE2B04089900534D9D /* WisdomKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DE33FAC82B1A88F1003D404F /* WWordsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33FAC72B1A88F1003D404F /* WWordsListRouter.swift */; };
+		DE33FACB2B1A8957003D404F /* WEditWordAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33FACA2B1A8957003D404F /* WEditWordAssembly.swift */; };
+		DE33FACD2B1A895E003D404F /* WEditWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33FACC2B1A895E003D404F /* WEditWordView.swift */; };
+		DE33FACF2B1A8966003D404F /* WEditWordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33FACE2B1A8966003D404F /* WEditWordRouter.swift */; };
+		DE33FAD12B1A8D32003D404F /* WBookRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33FAD02B1A8D32003D404F /* WBookRouter.swift */; };
+		DE6161532B0EAB6E005EEB2C /* Color+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6161522B0EAB6E005EEB2C /* Color+Wisdom.swift */; };
+		DE61B66A2B0F783500DDEEF6 /* EtelkaMediumProRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE61B6692B0F783500DDEEF6 /* EtelkaMediumProRegular.ttf */; };
+		DE61B66D2B10BD1A00DDEEF6 /* WMenuAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61B66C2B10BD1A00DDEEF6 /* WMenuAssembly.swift */; };
+		DE61B66F2B10BD2100DDEEF6 /* WMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61B66E2B10BD2100DDEEF6 /* WMenuRouter.swift */; };
+		DE61B6712B10BEF100DDEEF6 /* WLibraryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61B6702B10BEF100DDEEF6 /* WLibraryRouter.swift */; };
+		DE61B6732B10BF2400DDEEF6 /* WLibraryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61B6722B10BF2400DDEEF6 /* WLibraryAssembly.swift */; };
+		DE61B6752B10C09000DDEEF6 /* WSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61B6742B10C09000DDEEF6 /* WSettingsView.swift */; };
+		DE61B6782B10C0F500DDEEF6 /* WSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61B6772B10C0F500DDEEF6 /* WSettingsService.swift */; };
+		DE61B67A2B10C16000DDEEF6 /* WSettingsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61B6792B10C16000DDEEF6 /* WSettingsAssembly.swift */; };
+		DE61B6852B10C22A00DDEEF6 /* WSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61B6802B10C22A00DDEEF6 /* WSearchView.swift */; };
+		DE61B6862B10C22A00DDEEF6 /* WSearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61B6812B10C22A00DDEEF6 /* WSearchAssembly.swift */; };
+		DE61B6872B10C22A00DDEEF6 /* WWordsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61B6832B10C22A00DDEEF6 /* WWordsListView.swift */; };
+		DE61B6882B10C22A00DDEEF6 /* WWordsListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61B6842B10C22A00DDEEF6 /* WWordsListAssembly.swift */; };
+		DE61B68B2B10C4BF00DDEEF6 /* WBookAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61B68A2B10C4BF00DDEEF6 /* WBookAssembly.swift */; };
+		DE65EBEE2B01753400604E50 /* wisdom2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EBED2B01753400604E50 /* wisdom2App.swift */; };
+		DE65EBF32B01753400604E50 /* wisdom2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE65EBF12B01753400604E50 /* wisdom2.xcdatamodeld */; };
+		DE65EBF72B01753500604E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE65EBF62B01753500604E50 /* Assets.xcassets */; };
+		DE65EBFB2B01753500604E50 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE65EBFA2B01753500604E50 /* Preview Assets.xcassets */; };
+		DE65EC022B01777700604E50 /* WLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EC012B01777700604E50 /* WLibraryView.swift */; };
+		DE65EC042B01777E00604E50 /* WBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EC032B01777E00604E50 /* WBookView.swift */; };
+		DE65EC062B0177AF00604E50 /* WMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EC052B0177AF00604E50 /* WMenuView.swift */; };
+		DE65EC0A2B017DC900604E50 /* String+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EC082B017DC900604E50 /* String+Wisdom.swift */; };
+		DE65EC0C2B017DDB00604E50 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DE65EC0B2B017DDB00604E50 /* Localizable.xcstrings */; };
+		DE65EC112B017F0300604E50 /* WBooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EC0D2B017F0300604E50 /* WBooksService.swift */; };
+		DE65EC122B017F0300604E50 /* WNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EC0E2B017F0300604E50 /* WNetworkService.swift */; };
+		DE65EC132B017F0300604E50 /* WCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EC0F2B017F0300604E50 /* WCoreDataService.swift */; };
+		DE65EC142B017F0300604E50 /* WJnanaAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EC102B017F0300604E50 /* WJnanaAPIService.swift */; };
+		DE65EC1B2B01806E00604E50 /* WModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EC1A2B01806E00604E50 /* WModelData.swift */; };
+		DE65EC1E2B01813900604E50 /* WBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EC1C2B01813900604E50 /* WBook.swift */; };
+		DE65EC1F2B01813900604E50 /* WVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EC1D2B01813900604E50 /* WVerse.swift */; };
+		DE65EC212B018AC900604E50 /* NSManagedObjectContext+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65EC202B018AC900604E50 /* NSManagedObjectContext+Wisdom.swift */; };
+		DE8D15EE2B01940B000F3536 /* View+Wisdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8D15ED2B01940B000F3536 /* View+Wisdom.swift */; };
+		DE8D15F12B01990E000F3536 /* siddhanta2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE8D15F02B01990E000F3536 /* siddhanta2.ttf */; };
+		DECECB622B1A75E200D9FBF9 /* WWordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECECB612B1A75E200D9FBF9 /* WWordsService.swift */; };
+		DECECB642B1A761E00D9FBF9 /* WWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECECB632B1A761E00D9FBF9 /* WWord.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE034EC32B04089A00534D9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE65EBE22B01753400604E50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE034EBD2B04089900534D9D;
+			remoteInfo = WisdomKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE034EC62B04089A00534D9D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DE034EC52B04089A00534D9D /* WisdomKeyboard.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DE034EBE2B04089900534D9D /* WisdomKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WisdomKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE034EC02B04089A00534D9D /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		DE034EC22B04089A00534D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE33FAC72B1A88F1003D404F /* WWordsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWordsListRouter.swift; sourceTree = "<group>"; };
+		DE33FACA2B1A8957003D404F /* WEditWordAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WEditWordAssembly.swift; sourceTree = "<group>"; };
+		DE33FACC2B1A895E003D404F /* WEditWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WEditWordView.swift; sourceTree = "<group>"; };
+		DE33FACE2B1A8966003D404F /* WEditWordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WEditWordRouter.swift; sourceTree = "<group>"; };
+		DE33FAD02B1A8D32003D404F /* WBookRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBookRouter.swift; sourceTree = "<group>"; };
+		DE6161522B0EAB6E005EEB2C /* Color+Wisdom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Wisdom.swift"; sourceTree = "<group>"; };
+		DE61B6692B0F783500DDEEF6 /* EtelkaMediumProRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EtelkaMediumProRegular.ttf; sourceTree = "<group>"; };
+		DE61B66C2B10BD1A00DDEEF6 /* WMenuAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMenuAssembly.swift; sourceTree = "<group>"; };
+		DE61B66E2B10BD2100DDEEF6 /* WMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMenuRouter.swift; sourceTree = "<group>"; };
+		DE61B6702B10BEF100DDEEF6 /* WLibraryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLibraryRouter.swift; sourceTree = "<group>"; };
+		DE61B6722B10BF2400DDEEF6 /* WLibraryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLibraryAssembly.swift; sourceTree = "<group>"; };
+		DE61B6742B10C09000DDEEF6 /* WSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSettingsView.swift; sourceTree = "<group>"; };
+		DE61B6772B10C0F500DDEEF6 /* WSettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSettingsService.swift; sourceTree = "<group>"; };
+		DE61B6792B10C16000DDEEF6 /* WSettingsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSettingsAssembly.swift; sourceTree = "<group>"; };
+		DE61B6802B10C22A00DDEEF6 /* WSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSearchView.swift; sourceTree = "<group>"; };
+		DE61B6812B10C22A00DDEEF6 /* WSearchAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSearchAssembly.swift; sourceTree = "<group>"; };
+		DE61B6832B10C22A00DDEEF6 /* WWordsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWordsListView.swift; sourceTree = "<group>"; };
+		DE61B6842B10C22A00DDEEF6 /* WWordsListAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWordsListAssembly.swift; sourceTree = "<group>"; };
+		DE61B68A2B10C4BF00DDEEF6 /* WBookAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBookAssembly.swift; sourceTree = "<group>"; };
+		DE65EBEA2B01753400604E50 /* wisdom2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wisdom2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE65EBED2B01753400604E50 /* wisdom2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wisdom2App.swift; sourceTree = "<group>"; };
+		DE65EBF22B01753400604E50 /* wisdom2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wisdom2.xcdatamodel; sourceTree = "<group>"; };
+		DE65EBF62B01753500604E50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE65EBF82B01753500604E50 /* wisdom2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wisdom2.entitlements; sourceTree = "<group>"; };
+		DE65EBFA2B01753500604E50 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DE65EC012B01777700604E50 /* WLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLibraryView.swift; sourceTree = "<group>"; };
+		DE65EC032B01777E00604E50 /* WBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBookView.swift; sourceTree = "<group>"; };
+		DE65EC052B0177AF00604E50 /* WMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMenuView.swift; sourceTree = "<group>"; };
+		DE65EC082B017DC900604E50 /* String+Wisdom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Wisdom.swift"; sourceTree = "<group>"; };
+		DE65EC0B2B017DDB00604E50 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		DE65EC0D2B017F0300604E50 /* WBooksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBooksService.swift; sourceTree = "<group>"; };
+		DE65EC0E2B017F0300604E50 /* WNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNetworkService.swift; sourceTree = "<group>"; };
+		DE65EC0F2B017F0300604E50 /* WCoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCoreDataService.swift; sourceTree = "<group>"; };
+		DE65EC102B017F0300604E50 /* WJnanaAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WJnanaAPIService.swift; sourceTree = "<group>"; };
+		DE65EC1A2B01806E00604E50 /* WModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WModelData.swift; sourceTree = "<group>"; };
+		DE65EC1C2B01813900604E50 /* WBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBook.swift; sourceTree = "<group>"; };
+		DE65EC1D2B01813900604E50 /* WVerse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WVerse.swift; sourceTree = "<group>"; };
+		DE65EC202B018AC900604E50 /* NSManagedObjectContext+Wisdom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Wisdom.swift"; sourceTree = "<group>"; };
+		DE8D15ED2B01940B000F3536 /* View+Wisdom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Wisdom.swift"; sourceTree = "<group>"; };
+		DE8D15EF2B0195DB000F3536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DE8D15F02B01990E000F3536 /* siddhanta2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = siddhanta2.ttf; sourceTree = "<group>"; };
+		DECECB612B1A75E200D9FBF9 /* WWordsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWordsService.swift; sourceTree = "<group>"; };
+		DECECB632B1A761E00D9FBF9 /* WWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWord.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE034EBB2B04089900534D9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE65EBE72B01753400604E50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE034EBF2B04089A00534D9D /* WisdomKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DE034EC02B04089A00534D9D /* KeyboardViewController.swift */,
+				DE034EC22B04089A00534D9D /* Info.plist */,
+			);
+			path = WisdomKeyboard;
+			sourceTree = "<group>";
+		};
+		DE33FAC92B1A892D003D404F /* EditWordScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DE33FACA2B1A8957003D404F /* WEditWordAssembly.swift */,
+				DE33FACC2B1A895E003D404F /* WEditWordView.swift */,
+				DE33FACE2B1A8966003D404F /* WEditWordRouter.swift */,
+			);
+			path = EditWordScreen;
+			sourceTree = "<group>";
+		};
+		DE61B66B2B10BCF900DDEEF6 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				DE61B66C2B10BD1A00DDEEF6 /* WMenuAssembly.swift */,
+				DE65EC052B0177AF00604E50 /* WMenuView.swift */,
+				DE61B66E2B10BD2100DDEEF6 /* WMenuRouter.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		DE61B6762B10C09500DDEEF6 /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DE61B6742B10C09000DDEEF6 /* WSettingsView.swift */,
+				DE61B6792B10C16000DDEEF6 /* WSettingsAssembly.swift */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
+		DE61B67F2B10C22A00DDEEF6 /* SearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DE61B6802B10C22A00DDEEF6 /* WSearchView.swift */,
+				DE61B6812B10C22A00DDEEF6 /* WSearchAssembly.swift */,
+			);
+			path = SearchScreen;
+			sourceTree = "<group>";
+		};
+		DE61B6822B10C22A00DDEEF6 /* WordsListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DE61B6832B10C22A00DDEEF6 /* WWordsListView.swift */,
+				DE33FAC72B1A88F1003D404F /* WWordsListRouter.swift */,
+				DE61B6842B10C22A00DDEEF6 /* WWordsListAssembly.swift */,
+			);
+			path = WordsListScreen;
+			sourceTree = "<group>";
+		};
+		DE61B6892B10C4AB00DDEEF6 /* BookScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DE65EC032B01777E00604E50 /* WBookView.swift */,
+				DE33FAD02B1A8D32003D404F /* WBookRouter.swift */,
+				DE61B68A2B10C4BF00DDEEF6 /* WBookAssembly.swift */,
+			);
+			path = BookScreen;
+			sourceTree = "<group>";
+		};
+		DE65EBE12B01753400604E50 = {
+			isa = PBXGroup;
+			children = (
+				DE65EBEC2B01753400604E50 /* wisdom2 */,
+				DE034EBF2B04089A00534D9D /* WisdomKeyboard */,
+				DE65EBEB2B01753400604E50 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE65EBEB2B01753400604E50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE65EBEA2B01753400604E50 /* wisdom2.app */,
+				DE034EBE2B04089900534D9D /* WisdomKeyboard.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE65EBEC2B01753400604E50 /* wisdom2 */ = {
+			isa = PBXGroup;
+			children = (
+				DE61B66B2B10BCF900DDEEF6 /* MainMenu */,
+				DE65EC192B01806400604E50 /* Models */,
+				DE65EC172B017FEA00604E50 /* Extensions */,
+				DE65EC162B017F1800604E50 /* Services */,
+				DE65EC182B017FF500604E50 /* LibraryScreen */,
+				DE61B6892B10C4AB00DDEEF6 /* BookScreen */,
+				DE33FAC92B1A892D003D404F /* EditWordScreen */,
+				DE61B6822B10C22A00DDEEF6 /* WordsListScreen */,
+				DE61B6762B10C09500DDEEF6 /* SettingsScreen */,
+				DE61B67F2B10C22A00DDEEF6 /* SearchScreen */,
+				DE65EBED2B01753400604E50 /* wisdom2App.swift */,
+				DE8D15EF2B0195DB000F3536 /* Info.plist */,
+				DE61B6692B0F783500DDEEF6 /* EtelkaMediumProRegular.ttf */,
+				DE8D15F02B01990E000F3536 /* siddhanta2.ttf */,
+				DE65EC0B2B017DDB00604E50 /* Localizable.xcstrings */,
+				DE65EBF62B01753500604E50 /* Assets.xcassets */,
+				DE65EBF82B01753500604E50 /* wisdom2.entitlements */,
+				DE65EBF12B01753400604E50 /* wisdom2.xcdatamodeld */,
+				DE65EBF92B01753500604E50 /* Preview Content */,
+			);
+			path = wisdom2;
+			sourceTree = "<group>";
+		};
+		DE65EBF92B01753500604E50 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DE65EBFA2B01753500604E50 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DE65EC162B017F1800604E50 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DECECB612B1A75E200D9FBF9 /* WWordsService.swift */,
+				DE65EC0D2B017F0300604E50 /* WBooksService.swift */,
+				DE61B6772B10C0F500DDEEF6 /* WSettingsService.swift */,
+				DE65EC0F2B017F0300604E50 /* WCoreDataService.swift */,
+				DE65EC102B017F0300604E50 /* WJnanaAPIService.swift */,
+				DE65EC0E2B017F0300604E50 /* WNetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DE65EC172B017FEA00604E50 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE65EC202B018AC900604E50 /* NSManagedObjectContext+Wisdom.swift */,
+				DE65EC082B017DC900604E50 /* String+Wisdom.swift */,
+				DE8D15ED2B01940B000F3536 /* View+Wisdom.swift */,
+				DE6161522B0EAB6E005EEB2C /* Color+Wisdom.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE65EC182B017FF500604E50 /* LibraryScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DE61B6722B10BF2400DDEEF6 /* WLibraryAssembly.swift */,
+				DE65EC012B01777700604E50 /* WLibraryView.swift */,
+				DE61B6702B10BEF100DDEEF6 /* WLibraryRouter.swift */,
+			);
+			path = LibraryScreen;
+			sourceTree = "<group>";
+		};
+		DE65EC192B01806400604E50 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE65EC1C2B01813900604E50 /* WBook.swift */,
+				DE65EC1D2B01813900604E50 /* WVerse.swift */,
+				DE65EC1A2B01806E00604E50 /* WModelData.swift */,
+				DECECB632B1A761E00D9FBF9 /* WWord.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE034EBD2B04089900534D9D /* WisdomKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE034EC92B04089A00534D9D /* Build configuration list for PBXNativeTarget "WisdomKeyboard" */;
+			buildPhases = (
+				DE034EBA2B04089900534D9D /* Sources */,
+				DE034EBB2B04089900534D9D /* Frameworks */,
+				DE034EBC2B04089900534D9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WisdomKeyboard;
+			productName = WisdomKeyboard;
+			productReference = DE034EBE2B04089900534D9D /* WisdomKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		DE65EBE92B01753400604E50 /* wisdom2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE65EBFE2B01753500604E50 /* Build configuration list for PBXNativeTarget "wisdom2" */;
+			buildPhases = (
+				DE65EBE62B01753400604E50 /* Sources */,
+				DE65EBE72B01753400604E50 /* Frameworks */,
+				DE65EBE82B01753400604E50 /* Resources */,
+				DE034EC62B04089A00534D9D /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE034EC42B04089A00534D9D /* PBXTargetDependency */,
+			);
+			name = wisdom2;
+			productName = wisdom2;
+			productReference = DE65EBEA2B01753400604E50 /* wisdom2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE65EBE22B01753400604E50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					DE034EBD2B04089900534D9D = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					DE65EBE92B01753400604E50 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = DE65EBE52B01753400604E50 /* Build configuration list for PBXProject "wisdom2" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE65EBE12B01753400604E50;
+			productRefGroup = DE65EBEB2B01753400604E50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE65EBE92B01753400604E50 /* wisdom2 */,
+				DE034EBD2B04089900534D9D /* WisdomKeyboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE034EBC2B04089900534D9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE65EBE82B01753400604E50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8D15F12B01990E000F3536 /* siddhanta2.ttf in Resources */,
+				DE65EBFB2B01753500604E50 /* Preview Assets.xcassets in Resources */,
+				DE65EC0C2B017DDB00604E50 /* Localizable.xcstrings in Resources */,
+				DE61B66A2B0F783500DDEEF6 /* EtelkaMediumProRegular.ttf in Resources */,
+				DE65EBF72B01753500604E50 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE034EBA2B04089900534D9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE034EC12B04089A00534D9D /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE65EBE62B01753400604E50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE33FACD2B1A895E003D404F /* WEditWordView.swift in Sources */,
+				DE61B66D2B10BD1A00DDEEF6 /* WMenuAssembly.swift in Sources */,
+				DE61B6852B10C22A00DDEEF6 /* WSearchView.swift in Sources */,
+				DE61B6712B10BEF100DDEEF6 /* WLibraryRouter.swift in Sources */,
+				DE65EC1E2B01813900604E50 /* WBook.swift in Sources */,
+				DE8D15EE2B01940B000F3536 /* View+Wisdom.swift in Sources */,
+				DECECB642B1A761E00D9FBF9 /* WWord.swift in Sources */,
+				DE65EBEE2B01753400604E50 /* wisdom2App.swift in Sources */,
+				DE65EC112B017F0300604E50 /* WBooksService.swift in Sources */,
+				DE61B66F2B10BD2100DDEEF6 /* WMenuRouter.swift in Sources */,
+				DE61B6862B10C22A00DDEEF6 /* WSearchAssembly.swift in Sources */,
+				DE33FAC82B1A88F1003D404F /* WWordsListRouter.swift in Sources */,
+				DE33FACB2B1A8957003D404F /* WEditWordAssembly.swift in Sources */,
+				DE61B6872B10C22A00DDEEF6 /* WWordsListView.swift in Sources */,
+				DE65EC042B01777E00604E50 /* WBookView.swift in Sources */,
+				DE65EC132B017F0300604E50 /* WCoreDataService.swift in Sources */,
+				DE61B6782B10C0F500DDEEF6 /* WSettingsService.swift in Sources */,
+				DECECB622B1A75E200D9FBF9 /* WWordsService.swift in Sources */,
+				DE65EC1F2B01813900604E50 /* WVerse.swift in Sources */,
+				DE65EC0A2B017DC900604E50 /* String+Wisdom.swift in Sources */,
+				DE6161532B0EAB6E005EEB2C /* Color+Wisdom.swift in Sources */,
+				DE33FAD12B1A8D32003D404F /* WBookRouter.swift in Sources */,
+				DE65EC122B017F0300604E50 /* WNetworkService.swift in Sources */,
+				DE61B6752B10C09000DDEEF6 /* WSettingsView.swift in Sources */,
+				DE65EC022B01777700604E50 /* WLibraryView.swift in Sources */,
+				DE61B6882B10C22A00DDEEF6 /* WWordsListAssembly.swift in Sources */,
+				DE65EC1B2B01806E00604E50 /* WModelData.swift in Sources */,
+				DE33FACF2B1A8966003D404F /* WEditWordRouter.swift in Sources */,
+				DE65EC212B018AC900604E50 /* NSManagedObjectContext+Wisdom.swift in Sources */,
+				DE65EBF32B01753400604E50 /* wisdom2.xcdatamodeld in Sources */,
+				DE61B6732B10BF2400DDEEF6 /* WLibraryAssembly.swift in Sources */,
+				DE65EC062B0177AF00604E50 /* WMenuView.swift in Sources */,
+				DE61B67A2B10C16000DDEEF6 /* WSettingsAssembly.swift in Sources */,
+				DE65EC142B017F0300604E50 /* WJnanaAPIService.swift in Sources */,
+				DE61B68B2B10C4BF00DDEEF6 /* WBookAssembly.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE034EC42B04089A00534D9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE034EBD2B04089900534D9D /* WisdomKeyboard */;
+			targetProxy = DE034EC32B04089A00534D9D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DE034EC72B04089A00534D9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UAVM255T7W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WisdomKeyboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WisdomKeyboard;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartcosmetics.wisdom2.WisdomKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DE034EC82B04089A00534D9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UAVM255T7W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WisdomKeyboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WisdomKeyboard;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartcosmetics.wisdom2.WisdomKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE65EBFC2B01753500604E50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE65EBFD2B01753500604E50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		DE65EBFF2B01753500604E50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = wisdom2/wisdom2.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"wisdom2/Preview Content\"";
+				DEVELOPMENT_TEAM = UAVM255T7W;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = wisdom2/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartcosmetics.wisdom2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DE65EC002B01753500604E50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = wisdom2/wisdom2.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"wisdom2/Preview Content\"";
+				DEVELOPMENT_TEAM = UAVM255T7W;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = wisdom2/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartcosmetics.wisdom2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE034EC92B04089A00534D9D /* Build configuration list for PBXNativeTarget "WisdomKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE034EC72B04089A00534D9D /* Debug */,
+				DE034EC82B04089A00534D9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE65EBE52B01753400604E50 /* Build configuration list for PBXProject "wisdom2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE65EBFC2B01753500604E50 /* Debug */,
+				DE65EBFD2B01753500604E50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE65EBFE2B01753500604E50 /* Build configuration list for PBXNativeTarget "wisdom2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE65EBFF2B01753500604E50 /* Debug */,
+				DE65EC002B01753500604E50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE65EBF12B01753400604E50 /* wisdom2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE65EBF22B01753400604E50 /* wisdom2.xcdatamodel */,
+			);
+			currentVersion = DE65EBF22B01753400604E50 /* wisdom2.xcdatamodel */;
+			path = wisdom2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DE65EBE22B01753400604E50 /* Project object */;
+}

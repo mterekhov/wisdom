@@ -1,0 +1,183 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    " " : {
+
+    },
+    "%lld/%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "Add" : {
+
+    },
+    "Books" : {
+
+    },
+    "BookServiceError.BookNotFound" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "book was not found"
+          }
+        }
+      }
+    },
+    "BookServiceError.CoreDataError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "database error"
+          }
+        }
+      }
+    },
+    "BookServiceError.FailedSendRequest" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "failed to send request to server"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+
+    },
+    "English" : {
+
+    },
+    "IAST" : {
+
+    },
+    "LIBRARY" : {
+
+    },
+    "NetworkServiceError.BrokenLink" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "you are trying to reach broken link"
+          }
+        }
+      }
+    },
+    "NetworkServiceError.IncorrectResponse" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "incorrect response received from server"
+          }
+        }
+      }
+    },
+    "NetworkServiceError.ServerSideError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "there is an error on server side application"
+          }
+        }
+      }
+    },
+    "NetworkServiceError.UnknownServerError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "there is an unknown error on server side"
+          }
+        }
+      }
+    },
+    "Next" : {
+
+    },
+    "Previous" : {
+
+    },
+    "Sanskrit" : {
+
+    },
+    "Save" : {
+
+    },
+    "Search" : {
+
+    },
+    "SEARCH" : {
+
+    },
+    "Settings" : {
+
+    },
+    "SETTINGS" : {
+
+    },
+    "There are no verses in book" : {
+
+    },
+    "Version %@" : {
+
+    },
+    "WLibraryView.EmptyLibrary" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Library is empty"
+          }
+        }
+      }
+    },
+    "word %lld selected" : {
+
+    },
+    "WORDS" : {
+
+    },
+    "WordsServiceError.BookNotFound" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can not attach word to verse because book was not found"
+          }
+        }
+      }
+    },
+    "WWordsListView.NoWords" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No words yet"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
