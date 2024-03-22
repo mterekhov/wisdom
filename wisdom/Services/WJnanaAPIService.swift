@@ -13,8 +13,7 @@ typealias VersesListCompletionHandler = (_ result: Result<[String:Any], Error>) 
 let PayloadKey = "payload"
 let BookIDKey = "book_id"
 
-enum WJnanaAPIServiceError: LocalizedError {    
-}
+
 protocol WJnanaAPIServiceProtocol {
     
     func booksList() async -> Result<[String:Any], Error>

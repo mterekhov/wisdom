@@ -14,10 +14,6 @@ protocol WCoreDataServiceProtocol {
     /// - Parameter completionHandler: block will be launched after the local context is created, local context will be put to this block as parameter
     func asyncExecute() async -> NSManagedObjectContext
 
-    /// creates and provides local context in sync mode
-    /// - Parameter completionHandler: block which will launched after the local context is created
-    func execute(_ completionHandler: ((NSManagedObjectContext) -> Void))
-
     /// Saves root context, as a matter of fact saves all the data in root context to persistent storage
     func saveRootContext()
 
@@ -45,14 +41,7 @@ class WCoreDataService: WCoreDataServiceProtocol {
             }
         }
     }
-    
-    func execute(_ completionHandler: ((NSManagedObjectContext) -> Void)) {
-        let localContext = persistentContainer.newBackgroundContext()
-        localContext.performAndWait {
-            completionHandler(localContext)
-        }
-    }
-    
+
     func saveRootContext() {
         persistentContainer.viewContext.wisdom_saveContext()
     }

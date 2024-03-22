@@ -1,19 +1,14 @@
 import Foundation
 import CoreData
 
-enum WBooksServiceError: LocalizedError {
+enum WBooksServiceError: String, LocalizedError {
     
-    case failedToSendRequest
-    case coreDataError
+    case failedToSendRequest = "BookServiceError.FailedSendRequest"
+    case coreDataError = "BookServiceError.CoreDataError"
+    case bookNotFound = "BookServiceError.BookNotFound"
+
+    var localizedDescription: String { return self.rawValue.local }
     
-    var errorDescription: String? {
-        switch self {
-        case .failedToSendRequest:
-            return "BookServiceError.FailedSendRequest".local
-        case .coreDataError:
-            return "BookServiceError.CoreDataError".local
-        }
-    }
 }
 
 typealias VoidCompletionHandler = () -> Void
@@ -24,7 +19,7 @@ protocol WBooksServiceProtocol {
     func downloadVersesList(_ bookID: String) async -> Result<[WVerse], Error>
 
     func fetchBooksList(_ searchTitleString: String?) async -> Result<[WBook], Error>
-    func fetchVerses(_ bookID: String) async -> Result<[WBook], Error>
+    func fetchVersesList(_ bookID: String) async -> Result<[WVerse], Error>
 
     func saveBooksList(_ booksList: [WBook]) async
     func saveVersesList(_ versesList: [WVerse]) async
@@ -51,7 +46,7 @@ class WBooksService: WBooksServiceProtocol {
     //  MARK: - WBooksServiceProtocol -
 
     func downloadVersesList(_ bookID: String) async -> Result<[WVerse], Error> {
-        let result = await jnanaAPIService.booksList()
+        let result = await jnanaAPIService.bookContent(bookID)
         switch result {
         case .success(let versesListJSON):
             return .success(self.parseJSONVersesList(json: versesListJSON))
@@ -60,6 +55,16 @@ class WBooksService: WBooksServiceProtocol {
         }
     }
 
+    func downloadBooksList() async -> Result<[WBook], Error> {
+        let result = await jnanaAPIService.booksList()
+        switch result {
+        case .success(let booksJSON):
+            return .success(self.parseJSONBook(json: booksJSON))
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+    
     func fetchBooksList(_ searchTitleString: String?) async -> Result<[WBook], Error> {
         if let searchTitleString = searchTitleString {
             return await fetchBook([EnglishKey: searchTitleString])
@@ -69,8 +74,23 @@ class WBooksService: WBooksServiceProtocol {
         }
     }
 
-    func fetchVerses(_ bookID: String) async -> Result<[WBook], Error> {
-        return await fetchBook([UUIDKey: bookID])
+    func fetchVersesList(_ bookID: String) async -> Result<[WVerse], Error> {
+        let fetchBookResult = await fetchBook([UUIDKey: bookID])
+        switch fetchBookResult {
+        case .success(let booksList):
+            if booksList.count > 1 {
+                return .failure(WBooksServiceError.coreDataError)
+            }
+            
+            guard let firstBook = booksList.first,
+                  let versesList = firstBook.versesList else {
+                return .failure(WBooksServiceError.bookNotFound)
+            }
+            
+            return .success(versesList)
+        case .failure(let error):
+            return .failure(error)
+        }
     }
 
     func saveVersesList(_ versesList: [WVerse]) async {
@@ -99,19 +119,9 @@ class WBooksService: WBooksServiceProtocol {
         }
     }
     
-    func downloadBooksList() async -> Result<[WBook], Error> {
-        let result = await jnanaAPIService.booksList()
-        switch result {
-        case .success(let booksJSON):
-            return .success(self.parseJSONBook(json: booksJSON))
-        case .failure(let error):
-            return .failure(error)
-        }
-    }
-    
     //  MARK: - Routine -
 
-    private func fetchBook(_ search: [String:String]?) async -> Result<[WBook], Error>{
+    private func fetchBook(_ search: [String:String]?) async -> Result<[WBook], Error> {
         guard let coreDataService = coreDataService else {
             return .failure(WBooksServiceError.coreDataError)
         }
@@ -120,7 +130,7 @@ class WBooksService: WBooksServiceProtocol {
         return fetchBook(search, localContext)
     }
 
-    private func fetchBook(_ search: [String:String]?, _ localContext: NSManagedObjectContext) -> Result<[WBook], Error>{
+    private func fetchBook(_ search: [String:String]?, _ localContext: NSManagedObjectContext) -> Result<[WBook], Error> {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: CDBook.entity().name ?? "")
         if let search = search {
             var predicateString = ""
@@ -160,6 +170,7 @@ class WBooksService: WBooksServiceProtocol {
     
     private func parseJSONVersesList(json: [String:Any]) -> [WVerse] {
         var versesList =  [WVerse]()
+        
         guard let responsesList = json[ResponsesListKey] as? [[String:Any]] else { return versesList };
         guard let versesListResponse = responsesList.first else { return versesList }
         guard let payload = versesListResponse[PayloadKey] as? [[String:Any]] else { return versesList };

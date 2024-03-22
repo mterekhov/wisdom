@@ -19,3 +19,4 @@
 
 "BookServiceError.FailedSendRequest" = "failed to send request to server";
 "BookServiceError.CoreDataError" = "database error";
+"BookServiceError.BookNotFound" = "book was not found";

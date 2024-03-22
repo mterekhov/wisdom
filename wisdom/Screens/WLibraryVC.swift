@@ -67,7 +67,16 @@ class WLibraryVC: UIViewController, UICollectionViewDelegateFlowLayout, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("cell selected")
+        Task {
+            let bookUUID = booksList[indexPath.row].uuid
+            let versesListResult = await booksService.downloadVersesList(bookUUID)
+            switch versesListResult {
+            case .success(let versesList):
+                print("verses count is \(versesList.count)")
+            case.failure(let error):
+                print(error)
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {

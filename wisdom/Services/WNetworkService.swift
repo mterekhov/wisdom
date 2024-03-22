@@ -7,26 +7,15 @@
 
 import Foundation
 
-enum WNetworkServiceError: LocalizedError {
+enum WNetworkServiceError: String, LocalizedError {
     
-    case incorrectResponse
-    case serverSideError
-    case unknownServerError
-    case brokenLink
+    case incorrectResponse = "NetworkServiceError.IncorrectResponse"
+    case serverSideError = "NetworkServiceError.ServerSideError"
+    case unknownServerError = "NetworkServiceError.UnknownServerError"
+    case brokenLink = "NetworkServiceError.BrokenLink"
     
-    var errorDescription: String? {
-        switch self {
-        case .incorrectResponse:
-            return "NetworkServiceError.IncorrectResponse".local
-        case .serverSideError:
-            return "NetworkServiceError.ServerSideError".local
-        case .unknownServerError:
-            return "NetworkServiceError.UnknownServerError".local
-        case .brokenLink:
-            return "NetworkServiceError.BrokenLink".local
-
-        }
-    }
+    var localizedDescription: String { return self.rawValue.local }
+    
 }
 
 protocol WNetworkServiceProtocol {
